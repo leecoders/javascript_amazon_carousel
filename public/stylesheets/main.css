@@ -112,22 +112,6 @@ section {
   transition: transform 0.2s;
 }
 
-#a {
-  background: red;
-}
-
-#b {
-  background: blue;
-}
-
-#c {
-  background: green;
-}
-
-#d {
-  background: yellow;
-}
-
 .mini-carousel-center::before,
 .mini-carousel-center::after {
   position: absolute;
