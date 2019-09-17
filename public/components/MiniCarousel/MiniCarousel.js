@@ -1,56 +1,37 @@
-import slideCarouselTemplate from "./template.js";
+import { SlideCarousel } from "../SlideCarousel/SlideCarousel.js";
+import miniCarouselTemplate from "./template.js";
 import { $ } from "../../util/util.js";
 
 class MiniCarousel {
-  constructor(parentElement, slideImages, listCnt, listWidth) {
+  constructor(parentElement, miniImages, listCnt, leftEnd, transDist = 0) {
     this.parentElement = parentElement;
-    this.slideImages = slideImages;
+    this.miniCarouselTemplate = miniCarouselTemplate;
+    this.miniImages = miniImages;
     this.listCnt = listCnt;
-    this.leftEnd = -listWidth;
-    this.transDist = 0;
+    this.leftEnd = leftEnd;
+    this.transDist = transDist;
   }
 
-  renderImages = () => {
-    for (let i = 0; i < this.listCnt; ++i) {
-      $(".img-deque").children[i].firstChild.src = this.slideImages[i].src;
-    }
-  };
-
-  moveImagesToLeft = () => {
-    this.leftEnd -= 20;
-    this.transDist += 20;
-    const cloneNode = $(".img-deque").children[this.listCnt - 1].cloneNode(
-      true
-    );
-    $(".img-deque").insertAdjacentElement("afterbegin", cloneNode);
-    $(".img-deque").style.left = this.leftEnd + "rem";
-    $(".img-deque").style.transform = `translate(${this.transDist}rem)`;
-    $(".img-deque").removeChild($(".img-deque").children[this.listCnt]);
-  };
-
-  moveImagesToRight = () => {
-    this.leftEnd += 20;
-    this.transDist -= 20;
-    const cloneNode = $(".img-deque").children[0].cloneNode(true);
-    $(".img-deque").insertAdjacentElement("beforeend", cloneNode);
-    $(".img-deque").style.left = this.leftEnd + "rem";
-    $(".img-deque").style.transform = `translate(${this.transDist}rem)`;
-    $(".img-deque").removeChild($(".img-deque").children[0]);
-  };
-
   render = () => {
-    this.parentElement.innerHTML = slideCarouselTemplate;
-    this.renderImages();
-    setInterval(this.moveImagesToRight, 3000);
+    const slideCarousel = new SlideCarousel(
+      this.parentElement,
+      this.miniCarouselTemplate,
+      this.miniImages,
+      this.listCnt,
+      this.leftEnd,
+      this.transDist,
+      "#mini-carousel-image-deque"
+    );
+    slideCarousel.render();
     $("#mini-carousel-left-button").addEventListener(
       "click",
-      this.moveImagesToLeft
+      slideCarousel.moveImagesToLeft
     );
-
     $("#mini-carousel-right-button").addEventListener(
       "click",
-      this.moveImagesToRight
+      slideCarousel.moveImagesToRight
     );
+    setInterval(slideCarousel.moveImagesToRight, 3000);
   };
 }
 

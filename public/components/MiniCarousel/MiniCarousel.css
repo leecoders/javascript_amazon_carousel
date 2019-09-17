@@ -76,7 +76,7 @@ li {
   z-index: 3;
 }
 
-.img-deque {
+#mini-carousel-image-deque {
   position: relative;
   left: -20rem;
   width: 100rem;
