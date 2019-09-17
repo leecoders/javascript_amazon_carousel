@@ -1,13 +1,20 @@
-import slideCarouselTemplate from "./template.js";
 import { $ } from "../../util/util.js";
 
-class MiniCarousel {
-  constructor(parentElement, slideImages, listCnt, listWidth) {
+class SlideCarousel {
+  constructor(
+    parentElement,
+    slideCarouselTemplate,
+    slideImages,
+    listCnt,
+    leftEnd,
+    transDist
+  ) {
     this.parentElement = parentElement;
+    this.slideCarouselTemplate = slideCarouselTemplate;
     this.slideImages = slideImages;
     this.listCnt = listCnt;
-    this.leftEnd = -listWidth;
-    this.transDist = 0;
+    this.leftEnd = leftEnd;
+    this.transDist = transDist;
   }
 
   renderImages = () => {
@@ -39,19 +46,10 @@ class MiniCarousel {
   };
 
   render = () => {
-    this.parentElement.innerHTML = slideCarouselTemplate;
+    console.log(this.slideCarouselTemplate);
+    this.parentElement.innerHTML = this.slideCarouselTemplate;
     this.renderImages();
-    setInterval(this.moveImagesToRight, 3000);
-    $("#mini-carousel-left-button").addEventListener(
-      "click",
-      this.moveImagesToLeft
-    );
-
-    $("#mini-carousel-right-button").addEventListener(
-      "click",
-      this.moveImagesToRight
-    );
   };
 }
 
-export { MiniCarousel };
+export { SlideCarousel };
