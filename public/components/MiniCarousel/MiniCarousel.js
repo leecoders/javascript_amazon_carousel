@@ -1,8 +1,9 @@
-import { $ } from "./util/util.js";
-import { miniImages } from "./miniImage.js";
+import miniCarouselTemplate from "./template.js";
+import { $ } from "../../util/util.js";
 
 class MiniCarousel {
-  constructor(miniImages, listCnt, listWidth) {
+  constructor(parentElement, miniImages, listCnt, listWidth) {
+    this.parentElement = parentElement;
     this.miniImages = miniImages;
     this.listCnt = listCnt;
     this.leftEnd = -listWidth;
@@ -38,7 +39,9 @@ class MiniCarousel {
   };
 
   render = () => {
+    this.parentElement.innerHTML = miniCarouselTemplate;
     this.renderImages();
+    setInterval(this.moveImagesToRight, 3000);
     $("#mini-carousel-left-button").addEventListener(
       "click",
       this.moveImagesToLeft
@@ -51,5 +54,4 @@ class MiniCarousel {
   };
 }
 
-const mini = new MiniCarousel(miniImages, 4, 20);
-mini.render();
+export { MiniCarousel };
