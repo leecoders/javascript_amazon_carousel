@@ -1,4 +1,5 @@
 import { LowerCarousel } from "./LowerCarousel/LowerCarousel.js";
+import { UpperCarousel } from "./UpperCarousel/UpperCarousel.js";
 import mainCarouselTemplate from "./template.js";
 import { $, getImages } from "../../util/util.js";
 
@@ -17,7 +18,12 @@ class MainCarousel {
       mainImages.length,
       -60
     );
+    const upperCarousel = new UpperCarousel(
+      $(".main-carousel-first-container"),
+      this.mainImagesObj
+    );
     lowerCarousel.render();
+    upperCarousel.render();
   };
 }
 
