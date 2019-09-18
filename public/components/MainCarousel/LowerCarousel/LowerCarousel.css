@@ -1,20 +1,30 @@
+.lower-li-area {
+  position: relative;
+  left: -45rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: left;
+  width: 91.4rem;
+  height: 28.5rem;
+}
+
 .lower-carousel-container {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 30rem;
-  height: 15rem;
+  width: 70rem;
+  height: 28.5rem;
   background: #fff;
 }
 
 .lower-carousel-left-button-area,
 .lower-carousel-right-button-area {
   position: absolute;
-  height: 15rem;
+  height: 28.5rem;
   width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .lower-carousel-left-button-area {
@@ -31,13 +41,14 @@
   outline: none;
   border: none;
   padding: 0;
-  background: url("../../images/arrow2.png") no-repeat 50% 50%;
-  background-size: 3.7rem 3.7rem;
+  background: url("../../../images/arrow2.png") no-repeat 50% 50%;
+  background-size: 3.3rem 3.3rem;
   cursor: pointer;
+  opacity: 0.3;
 }
 
 .lower-carousel-button:active {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 #lower-carousel-left-button {
@@ -47,18 +58,26 @@
 .lower-carousel-center {
   position: absolute;
   left: 5rem;
-  width: 20rem;
-  height: 15rem;
+  width: 60rem;
+  height: 28.5rem;
   z-index: 3;
 }
 
-.img-container {
+.lower-img-container {
   position: absolute;
   overflow: hidden;
-  width: 20rem;
-  height: 15rem;
+  width: 60rem;
+  height: 28.5rem;
   background: #fff;
   z-index: 3;
+}
+
+.lower-text-container {
+  position: absolute;
+  top: 0;
+  right: 18rem;
+  width: 28rem;
+  height: 28.5rem;
 }
 
 #lower-carousel-image-deque {
@@ -66,39 +85,45 @@
   margin: 0;
   padding: 0;
   position: relative;
-  left: -20rem;
-  width: 100rem;
-  height: 15rem;
+  left: -60rem;
+  width: 1020rem;
+  height: 28.5rem;
   padding-inline-start: 0;
   transition: transform 0.2s;
 }
 
-.lower-carousel-center::before,
-.lower-carousel-center::after {
-  position: absolute;
-  top: 3rem;
-  width: 1rem;
-  height: 7rem;
-  content: "";
-  box-shadow: 0 -15px 25px 7px #222;
-  z-index: -1;
-}
-
-.lower-carousel-center::before {
-  left: 10px;
-  transform: rotate(-8deg);
-}
-
-.lower-carousel-center::after {
-  right: 10px;
-  transform: rotate(8deg);
-}
-
 .lower-carousel-image {
+  position: relative;
   margin: 0;
   padding: 0;
   border: 0;
   float: left;
-  width: 74.8rem;
+  width: 91.4rem;
   height: 28.5rem;
+}
+
+.lower-text-title {
+  display: inline-flex;
+  align-items: center;
+  padding: 0px 10px 0px 10px;
+  height: 2rem;
+  background: #000000;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.lower-text-head {
+  font-size: 28px;
+  margin: 1.5rem 0;
+}
+
+.lower-text-body {
+  font-size: 18px;
+}
+
+.lower-text-tail {
+  font-size: 18px;
+  margin: 1.5rem 0;
+  font-weight: bold;
 }

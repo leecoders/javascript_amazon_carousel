@@ -11,13 +11,6 @@ const miniCarousel = new MiniCarousel(
   -20
 );
 
-let mainImages = [];
-Object.keys(mainImagesObj).forEach(key => {
-  mainImagesObj[key].forEach(image => {
-    mainImages.push(image);
-  });
-});
-
 const mainCarousel = new MainCarousel($(".second-container"), mainImagesObj);
 
 miniCarousel.render();

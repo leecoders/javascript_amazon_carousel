@@ -1,7 +1,7 @@
 export default {
   Ship: [
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_A01._CB514650866_.jpg",
       title: "FAST, FREE DELIVERY",
       head: "Fast, FREE delivery on over 100 million items",
@@ -11,7 +11,7 @@ export default {
       link: "https://www.amazon.com/b?node=15247183011"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_A02._CB514650866_.jpg",
       title: "SAME-DAY DELIVERY",
       head: "FREE Same-Day Delivery",
@@ -21,7 +21,7 @@ export default {
       link: "https://www.amazon.com/b?node=8729023011"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_A03._CB514650829_.jpg",
       title: "RELEASE DAY DELIVERY",
       head: "Skip the lines and get it on release day",
@@ -31,7 +31,7 @@ export default {
       link: "https://www.amazon.com/b?node=16067347011"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_A04._CB494909365_.jpg",
       title: "PRIME NOW",
       head: "Ultrafast delivery on thousands of items",
@@ -43,7 +43,7 @@ export default {
   ],
   Stream: [
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_B01._CB457663232_.jpg",
       title: "PRIME VIDEO",
       head: "Watch movies, TV, live events, and more",
@@ -54,7 +54,7 @@ export default {
         "https://www.amazon.com/b/ref=dvm_us_aq_np_dhb_be_optpvt1?node=2858778011"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_B02._CB513839286_.jpg",
       title: "TWITCH PRIME",
       head: "Free Games & Loot with Twitch Prime",
@@ -64,7 +64,7 @@ export default {
       link: "https://twitch.amazon.com/prime"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_B03._CB513839286_.jpg",
       title: "PRIME MUSIC",
       head: "Millions of songs for every moment",
@@ -75,7 +75,7 @@ export default {
         "https://www.amazon.com/gp/dmusic/promotions/PrimeMusic?ref=hawkfire_prime_detail_page_benefit_desc"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/digital/video/merch/2018/Other/AVD12272_PrimeContentUpdate/Card_B04_AVD12272_PrimeContentUpdate_1280x400_en_US._CB474157036_.jpg",
       title: "AMAZON ORIGINALS",
       head: "Enjoy Amazon Original series and more",
@@ -86,7 +86,7 @@ export default {
         "https://www.amazon.com/gp/video/storefront/ref=dvm_us_aq_np_dhb_be_optorigt1?ie=UTF8&merchId=originals1"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_B05._CB514650828_.jpg",
       title: "AUDIBLE CHANNELS",
       head: "Original audio programs for life on the go",
@@ -98,7 +98,7 @@ export default {
   ],
   Shop: [
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_C06._CB495022579_.jpg",
       title: "PRIME AT WHOLE FOODS MARKET",
       head: "Our healthiest benefit yet",
@@ -108,7 +108,7 @@ export default {
       link: "https://www.amazon.com/wholefoods"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_C01_revised._CB502880131_.jpg",
       title: "ALEXA VOICE SHOPPING",
       head: "The simplest way to shop. Just ask Alexa.",
@@ -119,7 +119,7 @@ export default {
         "https://www.amazon.com/alexa-voice-shopping/b?ie=UTF8&node=14552177011"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_C03._CB511882458_.jpg",
       title: "JUST WITH PRIME",
       head: "Exclusive brands and deals available only to Prime members",
@@ -129,7 +129,7 @@ export default {
       link: "https://www.amazon.com/b?ie=UTF8&node=16205654011"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_C04._CB514650828_.jpg",
       title: "AMAZON FAMILY",
       head: "Save on supplies for the family",
@@ -141,7 +141,7 @@ export default {
   ],
   Read: [
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_D01._CB514706473_.jpg",
       title: "PRIME READING",
       head: "Prime members read free",
@@ -151,7 +151,7 @@ export default {
       link: "https://www.amazon.com/kindle-dbs/fd/prime-pr"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_D02._CB513839283_.jpg",
       title: "AMAZON FIRST READS",
       head: "Read next month's new releases today",
@@ -163,7 +163,7 @@ export default {
   ],
   More: [
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_E03._CB513839888_.jpg",
       title: "5% BACK",
       head: "Earn more with Prime Rewards",
@@ -173,7 +173,7 @@ export default {
       link: "https://www.amazon.com/b?node=16914437011&ref=acqNPrewards"
     },
     {
-      image:
+      src:
         "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/Card_E01._CB513839282_.jpg",
       title: "AMAZON PHOTOS",
       head: "Unlimited, free photo storage",

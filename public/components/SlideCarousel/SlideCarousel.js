@@ -24,7 +24,7 @@ class SlideCarousel {
     for (let i = 0; i < this.listCnt; ++i) {
       $(this.slideImagesDequeSelector).children[
         i
-      ].firstChild.src = this.slideImages[i].src;
+      ].children[0].src = this.slideImages[i].src;
     }
   };
 
