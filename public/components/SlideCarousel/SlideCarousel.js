@@ -15,6 +15,7 @@ class SlideCarousel {
     this.slideImages = slideImages;
     this.listCnt = listCnt;
     this.leftEnd = leftEnd;
+    this.listWidth = -leftEnd;
     this.transDist = transDist;
     this.slideImagesDequeSelector = slideImagesDequeSelector;
   }
@@ -28,8 +29,8 @@ class SlideCarousel {
   };
 
   moveImagesToLeft = () => {
-    this.leftEnd -= 20;
-    this.transDist += 20;
+    this.leftEnd -= listWidth;
+    this.transDist += listWidth;
     const cloneNode = $(this.slideImagesDequeSelector).children[
       this.listCnt - 1
     ].cloneNode(true);
@@ -47,8 +48,8 @@ class SlideCarousel {
   };
 
   moveImagesToRight = () => {
-    this.leftEnd += 20;
-    this.transDist -= 20;
+    this.leftEnd += listWidth;
+    this.transDist -= listWidth;
     const cloneNode = $(this.slideImagesDequeSelector).children[0].cloneNode(
       true
     );
