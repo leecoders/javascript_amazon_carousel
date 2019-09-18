@@ -10,7 +10,21 @@ class MiniCarousel {
     this.listCnt = listCnt;
     this.leftEnd = leftEnd;
     this.transDist = transDist;
+    this.intervalId = undefined;
   }
+
+  startInterval = slideCarousel => {
+    this.intervalId = setInterval(slideCarousel.moveImagesToRight, 3000);
+  };
+
+  stopInterval = () => {
+    clearInterval(this.intervalId);
+  };
+
+  restartInterval = slideCarousel => {
+    this.stopInterval();
+    this.startInterval(slideCarousel);
+  };
 
   render = () => {
     const slideCarousel = new SlideCarousel(
@@ -23,15 +37,15 @@ class MiniCarousel {
       "#mini-carousel-image-deque"
     );
     slideCarousel.render();
-    $("#mini-carousel-left-button").addEventListener(
-      "click",
-      slideCarousel.moveImagesToLeft
-    );
-    $("#mini-carousel-right-button").addEventListener(
-      "click",
-      slideCarousel.moveImagesToRight
-    );
-    setInterval(slideCarousel.moveImagesToRight, 3000);
+    this.startInterval(slideCarousel);
+    $("#mini-carousel-left-button").addEventListener("click", () => {
+      slideCarousel.moveImagesToLeft();
+      this.restartInterval(slideCarousel);
+    });
+    $("#mini-carousel-right-button").addEventListener("click", () => {
+      slideCarousel.moveImagesToRight();
+      this.restartInterval(slideCarousel);
+    });
   };
 }
 
