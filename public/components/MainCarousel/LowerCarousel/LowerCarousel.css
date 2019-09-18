@@ -1,6 +1,6 @@
 .lower-li-area {
   position: relative;
-  left: -45rem;
+  left: -46rem;
   margin: 0;
   padding: 0;
   border: 0;
@@ -107,7 +107,6 @@
   align-items: center;
   padding: 0px 10px 0px 10px;
   height: 2rem;
-  background: #000000;
   color: #fff;
   font-size: 15px;
   font-weight: bold;
@@ -126,4 +125,14 @@
   font-size: 18px;
   margin: 1.5rem 0;
   font-weight: bold;
+}
+
+.lower-text-tail > a {
+  color: #002f36;
+  text-decoration: none;
+}
+
+.lower-text-tail > a:hover {
+  color: #002f36;
+  text-decoration: underline;
 }

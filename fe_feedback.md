@@ -17,3 +17,6 @@
 ### 클래스 메서드에 get, set 함수 사용하면 함수 호출 없이 사용할 수 있다(?)
 
 ### setInterval은 실행 직후에 id를 반환한다.
+
+### box 엘리먼트 가운데 정렬 하기 위해 상위 box 엘리먼트에 flex, `justify-content: center;`를 주면 화면 가로 방향으로 줄어들었을 때 좌우 overflow가 똑같이 생김(왼쪽 overflow는 스크롤도 안됨.. 그냥 범위 넘어가버림)
+- 해결책 : `margin: 0 auto;`를 주면 가운데 정렬 + 왼쪽 overflow 방지 효과 있음

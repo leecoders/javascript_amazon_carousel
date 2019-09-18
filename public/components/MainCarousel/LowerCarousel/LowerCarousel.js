@@ -17,27 +17,38 @@ class LowerCarousel {
     for (let i = 0; i < this.ulElement.children.length; ++i) {
       const li = this.ulElement.children[i];
       const title = li.children[1].children[0];
-      // title.innerText = this.lowerImages;
+      title.innerText = this.lowerImages[i].title;
+      title.style.background = this.lowerImages[i].color;
     }
-    $(".lower-text-title");
   };
   setHead = () => {
-    $(".lower-text-head");
+    for (let i = 0; i < this.ulElement.children.length; ++i) {
+      const li = this.ulElement.children[i];
+      const head = li.children[1].children[1];
+      head.innerText = this.lowerImages[i].head;
+    }
   };
   setBody = () => {
-    $(".lower-text-body");
+    for (let i = 0; i < this.ulElement.children.length; ++i) {
+      const li = this.ulElement.children[i];
+      const body = li.children[1].children[2];
+      body.innerText = this.lowerImages[i].body;
+    }
   };
-  setTail = () => {
-    $(".lower-text-tail");
+  setTailAndLink = () => {
+    for (let i = 0; i < this.ulElement.children.length; ++i) {
+      const li = this.ulElement.children[i];
+      const tail = li.children[1].children[3];
+      const aTemplate = `<a href="${this.lowerImages[i].link}">${this.lowerImages[i].tail}</a>`;
+      tail.innerHTML = aTemplate;
+    }
   };
-  setLink = () => {};
   setText = () => {
     this.ulElement = $("#lower-carousel-image-deque");
     this.setTitle();
     this.setHead();
     this.setBody();
-    this.setTail();
-    this.setLink();
+    this.setTailAndLink();
   };
 
   render = () => {
