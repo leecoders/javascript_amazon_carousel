@@ -8,7 +8,7 @@ export default /*html*/ `
     </div>
     <div class="mini-carousel-center">
       <div class="img-container">
-        <ul id="mini-carousel-image-deque" class="img-deque">
+        <ul id="mini-carousel-image-deque">
           <li><img class="mini-carousel-image"></img></li>
           <li><img class="mini-carousel-image"></img></li>
           <li><img class="mini-carousel-image"></img></li>

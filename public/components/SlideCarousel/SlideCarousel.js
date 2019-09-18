@@ -8,7 +8,7 @@ class SlideCarousel {
     listCnt,
     leftEnd,
     transDist = 0,
-    slideImageDequeSelector
+    slideImagesDequeSelector
   ) {
     this.parentElement = parentElement;
     this.slideCarouselTemplate = slideCarouselTemplate;
@@ -16,12 +16,12 @@ class SlideCarousel {
     this.listCnt = listCnt;
     this.leftEnd = leftEnd;
     this.transDist = transDist;
-    this.slideImageDequeSelector = slideImageDequeSelector;
+    this.slideImagesDequeSelector = slideImagesDequeSelector;
   }
 
   renderImages = () => {
     for (let i = 0; i < this.listCnt; ++i) {
-      $(this.slideImageDequeSelector).children[
+      $(this.slideImagesDequeSelector).children[
         i
       ].firstChild.src = this.slideImages[i].src;
     }
@@ -30,38 +30,38 @@ class SlideCarousel {
   moveImagesToLeft = () => {
     this.leftEnd -= 20;
     this.transDist += 20;
-    const cloneNode = $(this.slideImageDequeSelector).children[
+    const cloneNode = $(this.slideImagesDequeSelector).children[
       this.listCnt - 1
     ].cloneNode(true);
-    $(this.slideImageDequeSelector).insertAdjacentElement(
+    $(this.slideImagesDequeSelector).insertAdjacentElement(
       "afterbegin",
       cloneNode
     );
-    $(this.slideImageDequeSelector).style.left = this.leftEnd + "rem";
+    $(this.slideImagesDequeSelector).style.left = this.leftEnd + "rem";
     $(
-      this.slideImageDequeSelector
+      this.slideImagesDequeSelector
     ).style.transform = `translate(${this.transDist}rem)`;
-    $(this.slideImageDequeSelector).removeChild(
-      $(this.slideImageDequeSelector).children[this.listCnt]
+    $(this.slideImagesDequeSelector).removeChild(
+      $(this.slideImagesDequeSelector).children[this.listCnt]
     );
   };
 
   moveImagesToRight = () => {
     this.leftEnd += 20;
     this.transDist -= 20;
-    const cloneNode = $(this.slideImageDequeSelector).children[0].cloneNode(
+    const cloneNode = $(this.slideImagesDequeSelector).children[0].cloneNode(
       true
     );
-    $(this.slideImageDequeSelector).insertAdjacentElement(
+    $(this.slideImagesDequeSelector).insertAdjacentElement(
       "beforeend",
       cloneNode
     );
-    $(this.slideImageDequeSelector).style.left = this.leftEnd + "rem";
+    $(this.slideImagesDequeSelector).style.left = this.leftEnd + "rem";
     $(
-      this.slideImageDequeSelector
+      this.slideImagesDequeSelector
     ).style.transform = `translate(${this.transDist}rem)`;
-    $(this.slideImageDequeSelector).removeChild(
-      $(this.slideImageDequeSelector).children[0]
+    $(this.slideImagesDequeSelector).removeChild(
+      $(this.slideImagesDequeSelector).children[0]
     );
   };
 

@@ -1,21 +1,21 @@
 export default /*html*/ `
-  <div class="slide-carousel-container">
-    <div class="slide-carousel-left-button-area">
+  <div class="lower-carousel-container">
+    <div class="lower-carousel-left-button-area">
       <button
-        id="slide-carousel-left-button"
-        class="slide-carousel-button"
+        id="lower-carousel-left-button"
+        class="lower-carousel-button"
       ></button>
     </div>
-    <div class="slide-carousel-center">
+    <div class="lower-carousel-center">
       <div class="img-container">
-        <ul id="mini-carousel-image-deque" class="img-deque">
+        <ul id="lower-carousel-image-deque">
         </ul>
       </div>
     </div>
-    <div class="slide-carousel-right-button-area">
+    <div class="lower-carousel-right-button-area">
       <button
-        id="slide-carousel-right-button"
-        class="slide-carousel-button"
+        id="lower-carousel-right-button"
+        class="lower-carousel-button"
       ></button>
     </div>
   </div>

@@ -1,4 +1,4 @@
-.mini-carousel-container {
+.lower-carousel-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,8 +7,8 @@
   background: #fff;
 }
 
-.mini-carousel-left-button-area,
-.mini-carousel-right-button-area {
+.lower-carousel-left-button-area,
+.lower-carousel-right-button-area {
   position: absolute;
   height: 15rem;
   width: 5rem;
@@ -17,34 +17,34 @@
   align-items: center;
 }
 
-.mini-carousel-left-button-area {
+.lower-carousel-left-button-area {
   left: 0;
 }
 
-.mini-carousel-right-button-area {
+.lower-carousel-right-button-area {
   right: 0;
 }
 
-.mini-carousel-button {
-  width: 1rem;
-  height: 1rem;
+.lower-carousel-button {
+  width: 3.7rem;
+  height: 3.7rem;
   outline: none;
   border: none;
   padding: 0;
-  background: url("../../images/arrow.png") no-repeat 50% 50%;
-  background-size: 1rem 1rem;
+  background: url("../../images/arrow2.png") no-repeat 50% 50%;
+  background-size: 3.7rem 3.7rem;
   cursor: pointer;
 }
 
-.mini-carousel-button:active {
+.lower-carousel-button:active {
   opacity: 0.5;
 }
 
-#mini-carousel-left-button {
+#lower-carousel-left-button {
   transform: rotate(180deg);
 }
 
-.mini-carousel-center {
+.lower-carousel-center {
   position: absolute;
   left: 5rem;
   width: 20rem;
@@ -61,7 +61,7 @@
   z-index: 3;
 }
 
-#mini-carousel-image-deque {
+#lower-carousel-image-deque {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -73,8 +73,8 @@
   transition: transform 0.2s;
 }
 
-.mini-carousel-center::before,
-.mini-carousel-center::after {
+.lower-carousel-center::before,
+.lower-carousel-center::after {
   position: absolute;
   top: 3rem;
   width: 1rem;
@@ -84,21 +84,21 @@
   z-index: -1;
 }
 
-.mini-carousel-center::before {
+.lower-carousel-center::before {
   left: 10px;
   transform: rotate(-8deg);
 }
 
-.mini-carousel-center::after {
+.lower-carousel-center::after {
   right: 10px;
   transform: rotate(8deg);
 }
 
-.mini-carousel-image {
+.lower-carousel-image {
   margin: 0;
   padding: 0;
   border: 0;
   float: left;
-  width: 20rem;
-  height: 15rem;
+  width: 74.8rem;
+  height: 28.5rem;
 }
