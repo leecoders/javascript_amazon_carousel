@@ -12,11 +12,19 @@ section {
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .first-container {
   position: relative;
   width: 75rem;
   height: 20rem;
+  border: 1px solid #000000;
+}
+
+.second-container {
+  position: relative;
+  width: 75rem;
+  height: 60rem;
   border: 1px solid #000000;
 }

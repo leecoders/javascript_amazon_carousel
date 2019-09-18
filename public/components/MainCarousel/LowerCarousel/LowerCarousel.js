@@ -24,3 +24,5 @@ class LowerCarousel {
     slideCarousel.render();
   };
 }
+
+export { LowerCarousel };
