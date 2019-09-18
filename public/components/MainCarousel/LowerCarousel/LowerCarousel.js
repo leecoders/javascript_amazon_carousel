@@ -39,7 +39,9 @@ class LowerCarousel {
     for (let i = 0; i < this.ulElement.children.length; ++i) {
       const li = this.ulElement.children[i];
       const tail = li.children[1].children[3];
-      const aTemplate = `<a href="${this.lowerImages[i].link}">${this.lowerImages[i].tail}</a>`;
+      const aTemplate = `
+        <a href="${this.lowerImages[i].link}">${this.lowerImages[i].tail}</a>
+        <button type="button" class="lower-carousel-triangle"></button>`;
       tail.innerHTML = aTemplate;
     }
   };

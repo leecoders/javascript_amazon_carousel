@@ -68,7 +68,6 @@
   overflow: hidden;
   width: 60rem;
   height: 28.5rem;
-  background: #fff;
   z-index: 3;
 }
 
@@ -135,4 +134,14 @@
 .lower-text-tail > a:hover {
   color: #002f36;
   text-decoration: underline;
+}
+
+.lower-carousel-triangle {
+  width: 18px;
+  height: 14px;
+  background: url("../../../images/triangle.png") no-repeat 50% 50%;
+  background-size: 8px 13px;
+  transform: rotate(90deg);
+  border: none;
+  outline: none;
 }
