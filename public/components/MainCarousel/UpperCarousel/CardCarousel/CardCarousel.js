@@ -15,9 +15,15 @@ class CardCarousel {
     this.parentElement.style.backgroundSize = `85rem 50rem`;
   };
 
+  setName = () => {
+    const nameContainer = this.parentElement.children[0].children[0];
+    nameContainer.innerText = this.cardName;
+  };
+
   render = () => {
     this.parentElement.innerHTML = cardCarouselTemplate;
     this.setImage();
+    this.setName();
   };
 }
 
