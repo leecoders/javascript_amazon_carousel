@@ -11,7 +11,6 @@ class MainCarousel {
     this.lowerCarousel = undefined;
     this.mainImages = undefined;
     this.cards = undefined;
-    this.cardButtons = undefined;
   }
 
   handleCardClick = card => {
@@ -57,7 +56,6 @@ class MainCarousel {
     this.setUpperCarousel();
     this.setLowerCarousel();
     this.cards = document.querySelectorAll(".card-carousel-container");
-    this.cardButtons = document.querySelectorAll(".card-circle-button");
   };
 }
 
