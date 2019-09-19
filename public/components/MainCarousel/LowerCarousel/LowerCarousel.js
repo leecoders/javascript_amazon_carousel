@@ -18,6 +18,7 @@ class LowerCarousel {
     this.transDist = 0;
     this.ulElement = undefined;
     this.handleSlideButtonClick = handleSlideButtonClick;
+    this.slideCarousel = undefined;
   }
 
   setTitle = () => {
@@ -60,8 +61,8 @@ class LowerCarousel {
     this.setTailAndLink();
   };
 
-  render = () => {
-    const slideCarousel = new SlideCarousel(
+  setSlideCarousel = () => {
+    this.slideCarousel = new SlideCarousel(
       this.parentElement,
       this.lowerCarouselTemplate,
       this.lowerImages,
@@ -70,13 +71,29 @@ class LowerCarousel {
       this.transDist,
       "#lower-carousel-image-deque"
     );
-    slideCarousel.render();
+    this.slideCarousel.render();
+  };
+
+  moveImagesToLeft = () => {
+    this.slideCarousel.moveImagesToLeft();
+  };
+
+  moveImagesToRight = () => {
+    this.slideCarousel.moveImagesToRight();
+  };
+
+  setEvent = () => {
     $("#lower-carousel-left-button").addEventListener("click", () => {
-      slideCarousel.moveImagesToLeft();
+      this.handleSlideButtonClick("left");
     });
     $("#lower-carousel-right-button").addEventListener("click", () => {
-      slideCarousel.moveImagesToRight();
+      this.handleSlideButtonClick("right");
     });
+  };
+
+  render = () => {
+    this.setSlideCarousel();
+    this.setEvent();
     this.setText();
   };
 }

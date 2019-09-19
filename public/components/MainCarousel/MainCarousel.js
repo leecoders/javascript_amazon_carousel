@@ -23,8 +23,12 @@ class MainCarousel {
     this.upperCarousel.highlightCardButtons(button);
   };
 
-  handleSlideButtonClick = slideButtonidx => {
-    console.log(slideButtonidx);
+  handleSlideButtonClick = direction => {
+    if (direction == "left") {
+      this.lowerCarousel.moveImagesToLeft();
+    } else if (direction == "right") {
+      this.lowerCarousel.moveImagesToRight();
+    }
   };
 
   setUpperCarousel = () => {
