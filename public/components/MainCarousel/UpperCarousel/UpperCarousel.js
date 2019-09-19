@@ -23,6 +23,7 @@ class UpperCarousel {
     this.cardCarousel = [];
     this.handleCardClick = handleCardClick;
     this.handleCardButtonClick = handleCardButtonClick;
+    this.cardButtons = undefined;
   }
 
   lowlightAllCards = () => {
@@ -39,6 +40,17 @@ class UpperCarousel {
     const buttonContainer = card.children[0];
     buttonContainer.style.visibility = "visible";
     card.classList.add("card-selected");
+  };
+
+  lowlightAllCardButtons = () => {
+    this.cardButtons.forEach(cardButton => {
+      cardButton.classList.remove("card-button-selected");
+    });
+  };
+
+  highlightCardButtons = button => {
+    this.lowlightAllCardButtons();
+    button.classList.add("card-button-selected");
   };
 
   setCardContainers = () => {
@@ -64,10 +76,9 @@ class UpperCarousel {
   };
 
   setCardEvent = () => {
-    this.cardContainers.forEach((cardContainer, idx) => {
+    this.cardContainers.forEach(cardContainer => {
       cardContainer.addEventListener("click", () => {
         const card = cardContainer.children[0];
-        this.highlightCard(card);
         this.handleCardClick(card);
       });
     });
@@ -78,6 +89,7 @@ class UpperCarousel {
     this.setCardContainers();
     this.setCardCarousel();
     this.setCardEvent();
+    this.cardButtons = document.querySelectorAll(".card-circle-button");
   };
 }
 
