@@ -2,7 +2,14 @@ import cardCarouselTemplate from "./template.js";
 import { $ } from "../../../../util/util.js";
 
 class CardCarousel {
-  constructor(parentElement, cardColor, cardImageSrc, cardName, contentCnt) {
+  constructor(
+    parentElement,
+    cardColor,
+    cardImageSrc,
+    cardName,
+    contentCnt,
+    { handleCardButtonClick }
+  ) {
     this.parentElement = parentElement;
     this.cardColor = cardColor;
     this.cardImageSrc = cardImageSrc;
@@ -11,6 +18,7 @@ class CardCarousel {
     this.cardContainer = undefined;
     this.buttonContainer = undefined;
     this.nameContainer = undefined;
+    this.handleCardButtonClick = handleCardButtonClick;
   }
 
   setNameContainer = () => {
@@ -35,14 +43,10 @@ class CardCarousel {
       button.id = `${this.cardName.toLowerCase()}-button-${i}`;
       button.className = "card-circle-button";
       this.buttonContainer.appendChild(button);
+      button.addEventListener("click", () => {
+        this.handleCardButtonClick(i);
+      });
     }
-  };
-
-  setEvent = () => {
-    this.cardContainer.addEventListener("click", () => {
-      this.cardContainer.classList.add("card-selected");
-      this.buttonContainer.style.visibility = "visible";
-    });
   };
 
   render = () => {
@@ -53,7 +57,6 @@ class CardCarousel {
     this.setImage();
     this.setName();
     this.setButton();
-    this.setEvent();
   };
 }
 

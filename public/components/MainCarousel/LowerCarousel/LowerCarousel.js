@@ -3,14 +3,21 @@ import lowerCarouselTemplate from "./template.js";
 import { $ } from "../../../util/util.js";
 
 class LowerCarousel {
-  constructor(parentElement, lowerImages, listCnt, leftEnd, transDist = 0) {
+  constructor(
+    parentElement,
+    lowerImages,
+    listCnt,
+    leftEnd,
+    { handleSlideButtonClick }
+  ) {
     this.parentElement = parentElement;
     this.lowerCarouselTemplate = lowerCarouselTemplate;
     this.lowerImages = lowerImages;
     this.listCnt = listCnt;
     this.leftEnd = leftEnd;
-    this.transDist = transDist;
+    this.transDist = 0;
     this.ulElement = undefined;
+    this.handleSlideButtonClick = handleSlideButtonClick;
   }
 
   setTitle = () => {

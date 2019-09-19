@@ -15,9 +15,9 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 9.5rem;
+  top: 10rem;
   width: 100%;
-  height: 40%;
+  height: 5rem;
   font-size: 20px;
   color: #ffffff;
 }
@@ -43,4 +43,8 @@
   background: url("../../../../images/circle.png") no-repeat 50% 50%;
   background-size: 0.6rem 0.6rem;
   opacity: 0.5;
+}
+
+.card-button-selected {
+  opacity: 1;
 }

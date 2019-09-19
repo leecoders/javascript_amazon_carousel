@@ -9,21 +9,38 @@ class MainCarousel {
     this.mainImagesObj = mainImagesObj;
   }
 
+  handleCardClick = cardIdx => {
+    console.log(cardIdx);
+  };
+
+  handleCardButtonClick = cardButtonIdx => {
+    console.log(cardButtonIdx);
+  };
+
+  handleSlideButtonClick = slideButtonidx => {
+    console.log(slideButtonidx);
+  };
+
   render = () => {
     this.parentElement.innerHTML = mainCarouselTemplate;
     const mainImages = getImages(this.mainImagesObj);
+    const upperCarousel = new UpperCarousel(
+      $(".main-carousel-first-container"),
+      this.mainImagesObj,
+      {
+        handleCardClick: this.handleCardClick,
+        handleCardButtonClick: this.handleCardButtonClick
+      }
+    );
     const lowerCarousel = new LowerCarousel(
       $(".main-carousel-second-container"),
       mainImages,
       mainImages.length,
-      -60
+      -60,
+      { handleSlideButtonClick: this.handleSlideButtonClick }
     );
-    const upperCarousel = new UpperCarousel(
-      $(".main-carousel-first-container"),
-      this.mainImagesObj
-    );
-    lowerCarousel.render();
     upperCarousel.render();
+    lowerCarousel.render();
   };
 }
 

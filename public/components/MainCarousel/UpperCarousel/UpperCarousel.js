@@ -3,7 +3,11 @@ import { $ } from "../../../util/util.js";
 import upperCarouselTemplate from "./template.js";
 
 class UpperCarousel {
-  constructor(parentElement, mainImagesObj) {
+  constructor(
+    parentElement,
+    mainImagesObj,
+    { handleCardClick, handleCardButtonClick }
+  ) {
     this.parentElement = parentElement;
     this.mainImagesObj = mainImagesObj;
     this.cardImagesUrl = [
@@ -17,7 +21,25 @@ class UpperCarousel {
     this.cardColor = ["#00A8E1", "#FF6138", "#E31F64", "#36C2B4", "#FFC400"];
     this.cardContainers = [];
     this.cardCarousel = [];
+    this.handleCardClick = handleCardClick;
+    this.handleCardButtonClick = handleCardButtonClick;
   }
+
+  lowlightAllCards = () => {
+    this.cardContainers.forEach(cardContainer => {
+      const card = cardContainer.children[0];
+      const buttonContainer = card.children[0];
+      card.classList.remove("card-selected");
+      buttonContainer.style.visibility = "hidden";
+    });
+  };
+
+  highlightCard = card => {
+    this.lowlightAllCards();
+    const buttonContainer = card.children[0];
+    buttonContainer.style.visibility = "visible";
+    card.classList.add("card-selected");
+  };
 
   setCardContainers = () => {
     for (let i = 1; i < 6; ++i) {
@@ -33,17 +55,29 @@ class UpperCarousel {
           this.cardColor[i],
           this.cardImagesUrl[i],
           this.cardNames[i],
-          this.mainImagesObj[this.cardNames[i]].length
+          this.mainImagesObj[this.cardNames[i]].length,
+          { handleCardButtonClick: this.handleCardButtonClick }
         )
       );
       this.cardCarousel[i].render();
     }
   };
 
+  setCardEvent = () => {
+    this.cardContainers.forEach((cardContainer, idx) => {
+      cardContainer.addEventListener("click", () => {
+        const card = cardContainer.children[0];
+        this.highlightCard(card);
+        this.handleCardClick(idx);
+      });
+    });
+  };
+
   render = () => {
     this.parentElement.innerHTML = upperCarouselTemplate;
     this.setCardContainers();
     this.setCardCarousel();
+    this.setCardEvent();
   };
 }
 
