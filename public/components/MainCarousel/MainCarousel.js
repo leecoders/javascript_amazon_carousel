@@ -87,7 +87,7 @@ class MainCarousel {
     this.cards = document.querySelectorAll(".card-carousel-container");
     this.cardButtons = document.querySelectorAll(".card-circle-button");
     this.handleCardClick(this.cards[0]);
-    this.handleSlideButtonClick("left");
+    this.lowerCarousel.moveImagesToLeft();
   };
 }
 
