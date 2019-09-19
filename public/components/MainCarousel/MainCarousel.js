@@ -11,7 +11,28 @@ class MainCarousel {
     this.lowerCarousel = undefined;
     this.mainImages = undefined;
     this.cards = undefined;
+    this.cardButtons = undefined;
   }
+
+  getShorterDirection = beforeSelectedButton => {
+    let beforeIdx, afterIdx, leftDist, rightDist;
+    const buttonlength = this.cardButtons.length;
+    this.cardButtons.forEach((cardButton, idx) => {
+      if (cardButton.classList.contains("card-button-selected"))
+        beforeIdx = idx;
+      if (beforeSelectedButton === cardButton) afterIdx = idx;
+    });
+    if (!Number.isInteger(beforeIdx) || !Number.isInteger(afterIdx)) {
+      return ["left", 0];
+    } else if (beforeIdx < afterIdx) {
+      rightDist = afterIdx - beforeIdx;
+      leftDist = buttonlength - rightDist;
+    } else {
+      leftDist = beforeIdx - afterIdx;
+      rightDist = buttonlength - leftDist;
+    }
+    return leftDist < rightDist ? ["left", leftDist] : ["right", rightDist];
+  };
 
   handleCardClick = card => {
     const cardButtonContainer = card.children[0];
@@ -20,7 +41,11 @@ class MainCarousel {
   };
 
   handleCardButtonClick = button => {
+    const [direction, distance] = this.getShorterDirection(button);
     this.upperCarousel.highlightCardButtons(button);
+    for (let i = 0; i < distance; ++i) {
+      this.handleSlideButtonClick(direction);
+    }
   };
 
   handleSlideButtonClick = direction => {
@@ -60,6 +85,8 @@ class MainCarousel {
     this.setUpperCarousel();
     this.setLowerCarousel();
     this.cards = document.querySelectorAll(".card-carousel-container");
+    this.cardButtons = document.querySelectorAll(".card-circle-button");
+    this.handleCardClick(this.cards[0]);
   };
 }
 
