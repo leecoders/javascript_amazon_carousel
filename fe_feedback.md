@@ -30,3 +30,5 @@
 ```
 - css 파일에서 background-size를 따로 넣어주면 background를 지정한 순간 이전 속성이 사라져서(왜 그런지는 모르곘지만) 아래처럼 된다.
 ![broken_css](https://user-images.githubusercontent.com/47619140/65154519-9c946100-da66-11e9-822f-ccdd5c462ac5.png)
+
+### element.children은 자식 요소에 대한 `HTMLCollection` 타입을 반환하고 `children[index]`를 통해 접근할 수 있지만 `Array` 타입이 아니기 때문에 forEach 등의 배열 프로토타입 메서드는 사용할 수 없다.

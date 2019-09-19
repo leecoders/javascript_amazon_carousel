@@ -6,7 +6,7 @@ class UpperCarousel {
   constructor(
     parentElement,
     mainImagesObj,
-    { handleCardClick, handleCardButtonClick }
+    { handleCardClick, handleCardButtonClick, handleButtonCheckedNowChange }
   ) {
     this.parentElement = parentElement;
     this.mainImagesObj = mainImagesObj;
@@ -23,8 +23,53 @@ class UpperCarousel {
     this.cardCarousel = [];
     this.handleCardClick = handleCardClick;
     this.handleCardButtonClick = handleCardButtonClick;
+    this.handleButtonCheckedNowChange = handleButtonCheckedNowChange;
+    this.cards = undefined;
     this.cardButtons = undefined;
   }
+
+  getButtonIdx = button => {
+    let ret;
+    this.cardButtons.forEach((cardButton, idx) => {
+      if (button === cardButton) ret = idx;
+    });
+    return ret;
+  };
+
+  getCardIdxByButton = button => {
+    let ret;
+    this.cards.forEach((card, idx) => {
+      const buttonContainer = card.children[0];
+      for (let i = 0; i < buttonContainer.childElementCount; ++i) {
+        if (button === buttonContainer.children[i]) ret = idx;
+      }
+    });
+    return ret;
+  };
+
+  moveToLeft = button => {
+    const buttonIdx = this.getButtonIdx(button);
+    const nextButtonIdx =
+      buttonIdx === 0 ? this.cardButtons.length - 1 : buttonIdx - 1;
+    const nextCardIdx = this.getCardIdxByButton(
+      this.cardButtons[nextButtonIdx]
+    );
+    this.highlightCard(this.cards[nextCardIdx]);
+    this.highlightCardButtons(this.cardButtons[nextButtonIdx]);
+    this.handleButtonCheckedNowChange(this.cardButtons[nextButtonIdx]);
+  };
+
+  moveToRight = button => {
+    const buttonIdx = this.getButtonIdx(button);
+    const nextButtonIdx =
+      buttonIdx === this.cardButtons.length - 1 ? 0 : buttonIdx + 1;
+    const nextCardIdx = this.getCardIdxByButton(
+      this.cardButtons[nextButtonIdx]
+    );
+    this.highlightCard(this.cards[nextCardIdx]);
+    this.highlightCardButtons(this.cardButtons[nextButtonIdx]);
+    this.handleButtonCheckedNowChange(this.cardButtons[nextButtonIdx]);
+  };
 
   lowlightAllCards = () => {
     this.cardContainers.forEach(cardContainer => {
@@ -89,6 +134,7 @@ class UpperCarousel {
     this.setCardContainers();
     this.setCardCarousel();
     this.setCardEvent();
+    this.cards = document.querySelectorAll(".card-carousel-container");
     this.cardButtons = document.querySelectorAll(".card-circle-button");
   };
 }

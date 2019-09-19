@@ -12,6 +12,7 @@ class MainCarousel {
     this.mainImages = undefined;
     this.cards = undefined;
     this.cardButtons = undefined;
+    this.buttonCheckedNow = undefined;
   }
 
   getShorterDirection = beforeSelectedButton => {
@@ -34,6 +35,10 @@ class MainCarousel {
     return leftDist < rightDist ? ["left", leftDist] : ["right", rightDist];
   };
 
+  handleButtonCheckedNowChange = button => {
+    this.buttonCheckedNow = button;
+  };
+
   handleCardClick = card => {
     const cardButtonContainer = card.children[0];
     this.upperCarousel.highlightCard(card);
@@ -41,20 +46,22 @@ class MainCarousel {
   };
 
   handleCardButtonClick = button => {
+    this.buttonCheckedNow = button;
     const [direction, distance] = this.getShorterDirection(button);
     this.upperCarousel.highlightCardButtons(button);
     for (let i = 0; i < distance; ++i) {
-      this.handleSlideButtonClick(direction);
+      if (direction == "left") this.lowerCarousel.moveImagesToLeft();
+      else this.lowerCarousel.moveImagesToRight();
     }
   };
 
   handleSlideButtonClick = direction => {
     if (direction == "left") {
       this.lowerCarousel.moveImagesToLeft();
-      // this.upperCarousel.moveToLeft();
+      this.upperCarousel.moveToLeft(this.buttonCheckedNow);
     } else if (direction == "right") {
       this.lowerCarousel.moveImagesToRight();
-      // this.upperCarousel.moveToRight();
+      this.upperCarousel.moveToRight(this.buttonCheckedNow);
     }
   };
 
@@ -64,7 +71,8 @@ class MainCarousel {
       this.mainImagesObj,
       {
         handleCardClick: this.handleCardClick,
-        handleCardButtonClick: this.handleCardButtonClick
+        handleCardButtonClick: this.handleCardButtonClick,
+        handleButtonCheckedNowChange: this.handleButtonCheckedNowChange
       }
     );
     this.upperCarousel.render();
@@ -76,7 +84,9 @@ class MainCarousel {
       this.mainImages,
       this.mainImages.length,
       -60,
-      { handleSlideButtonClick: this.handleSlideButtonClick }
+      {
+        handleSlideButtonClick: this.handleSlideButtonClick
+      }
     );
     this.lowerCarousel.render();
   };
