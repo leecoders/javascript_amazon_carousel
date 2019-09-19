@@ -73,10 +73,10 @@
 
 .lower-text-container {
   position: absolute;
-  top: 0;
+  top: 2.5rem;
   right: 18rem;
   width: 28rem;
-  height: 28.5rem;
+  height: 25rem;
 }
 
 #lower-carousel-image-deque {
