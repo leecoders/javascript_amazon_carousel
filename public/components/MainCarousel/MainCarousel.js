@@ -51,8 +51,10 @@ class MainCarousel {
   handleSlideButtonClick = direction => {
     if (direction == "left") {
       this.lowerCarousel.moveImagesToLeft();
+      // this.upperCarousel.moveToLeft();
     } else if (direction == "right") {
       this.lowerCarousel.moveImagesToRight();
+      // this.upperCarousel.moveToRight();
     }
   };
 
