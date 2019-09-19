@@ -7,14 +7,20 @@ class MainCarousel {
   constructor(parentElement, mainImagesObj) {
     this.parentElement = parentElement;
     this.mainImagesObj = mainImagesObj;
+    this.cards = undefined;
+    this.cardButtons = undefined;
   }
 
-  handleCardClick = cardIdx => {
-    console.log(cardIdx);
+  handleCardButtonClick = button => {
+    this.cardButtons.forEach(cardButton => {
+      cardButton.classList.remove("card-button-selected");
+    });
+    button.classList.add("card-button-selected");
   };
 
-  handleCardButtonClick = cardButtonIdx => {
-    console.log(cardButtonIdx);
+  handleCardClick = card => {
+    const cardButtonContainer = card.children[0];
+    this.handleCardButtonClick(cardButtonContainer.children[0]);
   };
 
   handleSlideButtonClick = slideButtonidx => {
@@ -41,6 +47,8 @@ class MainCarousel {
     );
     upperCarousel.render();
     lowerCarousel.render();
+    this.cards = document.querySelectorAll(".card-carousel-container");
+    this.cardButtons = document.querySelectorAll(".card-circle-button");
   };
 }
 

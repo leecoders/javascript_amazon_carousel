@@ -43,8 +43,9 @@ class CardCarousel {
       button.id = `${this.cardName.toLowerCase()}-button-${i}`;
       button.className = "card-circle-button";
       this.buttonContainer.appendChild(button);
-      button.addEventListener("click", () => {
-        this.handleCardButtonClick(i);
+      button.addEventListener("click", e => {
+        this.handleCardButtonClick(button);
+        e.stopPropagation();
       });
     }
   };

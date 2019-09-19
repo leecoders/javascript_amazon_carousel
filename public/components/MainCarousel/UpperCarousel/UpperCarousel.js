@@ -68,7 +68,7 @@ class UpperCarousel {
       cardContainer.addEventListener("click", () => {
         const card = cardContainer.children[0];
         this.highlightCard(card);
-        this.handleCardClick(idx);
+        this.handleCardClick(card);
       });
     });
   };
