@@ -8,6 +8,7 @@ class CardCarousel {
     cardImageSrc,
     cardName,
     contentCnt,
+    cardImages,
     { handleCardButtonClick }
   ) {
     this.parentElement = parentElement;
@@ -15,6 +16,7 @@ class CardCarousel {
     this.cardImageSrc = cardImageSrc;
     this.cardName = cardName;
     this.contentCnt = contentCnt;
+    this.cardImages = cardImages;
     this.cardContainer = undefined;
     this.buttonContainer = undefined;
     this.nameContainer = undefined;
@@ -29,7 +31,13 @@ class CardCarousel {
 
   setImage = () => {
     this.cardContainer.id = `${this.cardName.toLowerCase()}-card-container`;
-    this.cardContainer.style.background = `${this.cardColor} url("${this.cardImageSrc}") no-repeat 28.5% 50%`;
+    this.cardContainer.style.background = `url("${
+      this.cardImageSrc
+    }") no-repeat 28.5% 50%, linear-gradient(30deg, ${
+      this.cardImages.gradient[0]
+    } 45%, ${this.cardImages.gradient[1]} 52%, ${
+      this.cardImages.gradient[2]
+    } 20%)`;
     this.cardContainer.style.backgroundSize = `85rem 50rem`;
   };
 

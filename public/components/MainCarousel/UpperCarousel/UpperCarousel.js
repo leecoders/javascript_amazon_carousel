@@ -1,6 +1,7 @@
 import { CardCarousel } from "./CardCarousel/CardCarousel.js";
 import { $ } from "../../../util/util.js";
 import upperCarouselTemplate from "./template.js";
+import cardImages from "../../../imageSrc/cardImage.js";
 
 class UpperCarousel {
   constructor(
@@ -113,6 +114,7 @@ class UpperCarousel {
           this.cardImagesUrl[i],
           this.cardNames[i],
           this.mainImagesObj[this.cardNames[i]].length,
+          cardImages[i],
           { handleCardButtonClick: this.handleCardButtonClick }
         )
       );
