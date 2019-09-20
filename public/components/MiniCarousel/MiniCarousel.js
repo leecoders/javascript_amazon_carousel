@@ -38,6 +38,11 @@ class MiniCarousel {
     );
     slideCarousel.render();
     this.startInterval(slideCarousel);
+    $(".img-container").addEventListener("click", e => {
+      const imageId = e.target.id;
+      const imageIdx = imageId[imageId.length - 1];
+      location.href = this.miniImages[imageIdx].link;
+    });
     $("#mini-carousel-left-button").addEventListener("click", () => {
       slideCarousel.moveImagesToLeft();
       this.restartInterval(slideCarousel);
