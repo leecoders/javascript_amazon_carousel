@@ -20,18 +20,20 @@ section {
   height: 100%;
 }
 
-.first-container {
+.main-container {
   position: relative;
+  top: 10rem;
   width: 75rem;
-  height: 20rem;
+  height: 50rem;
   border: 1px solid #000000;
   margin: 0 auto;
 }
 
-.second-container {
+.mini-container {
   position: relative;
+  top: 15rem;
   width: 75rem;
-  height: 50rem;
+  height: 20rem;
   border: 1px solid #000000;
   margin: 0 auto;
 }
