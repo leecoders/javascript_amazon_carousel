@@ -1,6 +1,6 @@
-import { SlideCarousel } from "../../SlideCarousel/SlideCarousel.js";
+import { SlideCarousel } from "../SlideCarousel/SlideCarousel.js";
 import lowerCarouselTemplate from "./template.js";
-import { $ } from "../../../util/util.js";
+import { $ } from "../../utils/util.js";
 
 class LowerCarousel {
   constructor(

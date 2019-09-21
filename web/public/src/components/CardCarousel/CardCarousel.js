@@ -1,11 +1,11 @@
 import cardCarouselTemplate from "./template.js";
-import { $ } from "../../../../util/util.js";
+import { $ } from "../../utils/util.js";
 
 class CardCarousel {
   constructor(
     parentElement,
     cardColor,
-    cardImageSrc,
+    cardimage_objs,
     cardName,
     contentCnt,
     cardImages,
@@ -13,7 +13,7 @@ class CardCarousel {
   ) {
     this.parentElement = parentElement;
     this.cardColor = cardColor;
-    this.cardImageSrc = cardImageSrc;
+    this.cardimage_objs = cardimage_objs;
     this.cardName = cardName;
     this.contentCnt = contentCnt;
     this.cardImages = cardImages;
@@ -32,7 +32,7 @@ class CardCarousel {
   setImage = () => {
     this.cardContainer.id = `${this.cardName.toLowerCase()}-card-container`;
     this.cardContainer.style.background = `url("${
-      this.cardImageSrc
+      this.cardimage_objs
     }") no-repeat 28.5% 50%, linear-gradient(30deg, ${
       this.cardImages.gradient[0]
     } 45%, ${this.cardImages.gradient[1]} 52%, ${

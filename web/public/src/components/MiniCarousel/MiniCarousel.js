@@ -1,6 +1,6 @@
 import { SlideCarousel } from "../SlideCarousel/SlideCarousel.js";
 import miniCarouselTemplate from "./template.js";
-import { $ } from "../../util/util.js";
+import { $ } from "../../utils/util.js";
 
 class MiniCarousel {
   constructor(parentElement, miniImages, listCnt, leftEnd, transDist = 0) {

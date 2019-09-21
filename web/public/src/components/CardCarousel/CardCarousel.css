@@ -2,10 +2,11 @@
   position: relative;
   width: 10.5rem;
   height: 15rem;
+  background-size: 10.5rem 15rem;
 }
 
 .card-selected {
-  z-index: 3;
+  z-index: 4;
   transform: scale(1.2);
 }
 
@@ -40,11 +41,17 @@
   height: 1rem;
   border: none;
   outline: none;
-  background: url("../../../../images/circle.png") no-repeat 50% 50%;
+  background: url("../../images/circle.png") no-repeat 50% 50%;
   background-size: 0.6rem 0.6rem;
   opacity: 0.5;
 }
 
 .card-button-selected {
   opacity: 1;
+}
+
+.card-gradient-background {
+  position: absolute;
+  width: 10.5rem;
+  height: 15rem;
 }

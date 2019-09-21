@@ -1,4 +1,4 @@
-import { $ } from "../../util/util.js";
+import { $ } from "../../utils/util.js";
 
 class SlideCarousel {
   constructor(

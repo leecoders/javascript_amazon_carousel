@@ -1,8 +1,8 @@
 import { MiniCarousel } from "./components/MiniCarousel/MiniCarousel.js";
 import { MainCarousel } from "./components/MainCarousel/MainCarousel.js";
-import { $ } from "./util/util.js";
-import { miniImages } from "./imageSrc/miniImage.js";
-import mainImagesObj from "./imageSrc/mainImage.js";
+import { $ } from "./utils/util.js";
+import { miniImages } from "./image_objs/miniImage.js";
+import mainImagesObj from "./image_objs/mainImage.js";
 
 const miniCarousel = new MiniCarousel(
   $(".mini-container"),

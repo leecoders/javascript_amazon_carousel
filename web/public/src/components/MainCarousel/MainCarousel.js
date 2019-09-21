@@ -1,7 +1,7 @@
-import { UpperCarousel } from "./UpperCarousel/UpperCarousel.js";
-import { LowerCarousel } from "./LowerCarousel/LowerCarousel.js";
+import { UpperCarousel } from "../UpperCarousel/UpperCarousel.js";
+import { LowerCarousel } from "../LowerCarousel/LowerCarousel.js";
 import mainCarouselTemplate from "./template.js";
-import { $, getImages } from "../../util/util.js";
+import { $, getImages } from "../../utils/util.js";
 
 class MainCarousel {
   constructor(parentElement, mainImagesObj) {

@@ -41,7 +41,7 @@
   outline: none;
   border: none;
   padding: 0;
-  background: url("../../../images/arrow2.png") no-repeat 50% 50%;
+  background: url("../../images/arrow2.png") no-repeat 50% 50%;
   background-size: 3.3rem 3.3rem;
   cursor: pointer;
   opacity: 0.3;
@@ -139,7 +139,7 @@
 .lower-carousel-triangle {
   width: 18px;
   height: 14px;
-  background: url("../../../images/triangle.png") no-repeat 50% 50%;
+  background: url("../../images/triangle.png") no-repeat 50% 50%;
   background-size: 8px 13px;
   transform: rotate(90deg);
   border: none;

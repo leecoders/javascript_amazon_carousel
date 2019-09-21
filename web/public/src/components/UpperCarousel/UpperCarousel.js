@@ -1,7 +1,7 @@
-import { CardCarousel } from "./CardCarousel/CardCarousel.js";
-import { $ } from "../../../util/util.js";
+import { CardCarousel } from "../CardCarousel/CardCarousel.js";
+import { $ } from "../../utils/util.js";
 import upperCarouselTemplate from "./template.js";
-import cardImages from "../../../imageSrc/cardImage.js";
+import cardImages from "../../image_objs/cardImage.js";
 
 class UpperCarousel {
   constructor(
