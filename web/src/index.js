@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import { MiniCarousel } from "./components/MiniCarousel/MiniCarousel.js";
 import { MainCarousel } from "./components/MainCarousel/MainCarousel.js";
 import { $ } from "./utils/util.js";
