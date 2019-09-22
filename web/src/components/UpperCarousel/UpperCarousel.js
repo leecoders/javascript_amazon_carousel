@@ -19,7 +19,6 @@ class UpperCarousel {
       "https://images-na.ssl-images-amazon.com/images/G/01/marketing/prime/detail_page/InteractivePlane_TILES_SpriteSheet_E._CB513285352_.png"
     ];
     this.cardNames = Object.keys(this.mainImagesObj).map(key => key);
-    this.cardColor = ["#00A8E1", "#FF6138", "#E31F64", "#36C2B4", "#FFC400"];
     this.cardContainers = [];
     this.cardCarousel = [];
     this.handleCardClick = handleCardClick;
