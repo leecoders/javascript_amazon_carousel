@@ -109,7 +109,6 @@ class UpperCarousel {
       this.cardCarousel.push(
         new CardCarousel(
           this.cardContainers[i],
-          this.cardColor[i],
           this.cardImagesUrl[i],
           this.cardNames[i],
           this.mainImagesObj[this.cardNames[i]].length,

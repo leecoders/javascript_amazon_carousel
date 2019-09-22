@@ -4,7 +4,6 @@ import { $ } from "../../utils/util.js";
 class CardCarousel {
   constructor(
     parentElement,
-    cardColor,
     cardimage_objs,
     cardName,
     contentCnt,
@@ -12,7 +11,6 @@ class CardCarousel {
     { handleCardButtonClick }
   ) {
     this.parentElement = parentElement;
-    this.cardColor = cardColor;
     this.cardimage_objs = cardimage_objs;
     this.cardName = cardName;
     this.contentCnt = contentCnt;
