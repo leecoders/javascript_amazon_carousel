@@ -16,7 +16,7 @@ const path = require("path");
 // );
 const MODE = process.env.WEBPACK_ENV;
 
-const OUTPUT_DIR = path.join(__dirname, "dist");
+const OUTPUT_DIR = path.join(__dirname, "src/static");
 const miniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
