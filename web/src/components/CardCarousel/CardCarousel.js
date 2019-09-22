@@ -19,6 +19,7 @@ class CardCarousel {
     this.buttonContainer = undefined;
     this.nameContainer = undefined;
     this.handleCardButtonClick = handleCardButtonClick;
+    this.render();
   }
 
   setNameContainer = () => {

@@ -26,6 +26,7 @@ class UpperCarousel {
     this.handleButtonCheckedNowChange = handleButtonCheckedNowChange;
     this.cards = undefined;
     this.cardButtons = undefined;
+    this.render();
   }
 
   getButtonIdx = button => {
@@ -116,7 +117,6 @@ class UpperCarousel {
           { handleCardButtonClick: this.handleCardButtonClick }
         )
       );
-      this.cardCarousel[i].render();
     }
   };
 

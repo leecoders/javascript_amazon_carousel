@@ -19,6 +19,7 @@ class LowerCarousel {
     this.ulElement = undefined;
     this.handleSlideButtonClick = handleSlideButtonClick;
     this.slideCarousel = undefined;
+    this.render();
   }
 
   setTitle = () => {
@@ -71,7 +72,6 @@ class LowerCarousel {
       this.transDist,
       "#lower-carousel-image-deque"
     );
-    this.slideCarousel.render();
   };
 
   moveImagesToLeft = () => {

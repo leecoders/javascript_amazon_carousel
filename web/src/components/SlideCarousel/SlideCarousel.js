@@ -18,6 +18,7 @@ class SlideCarousel {
     this.listWidth = -leftEnd;
     this.transDist = transDist;
     this.slideImagesDequeSelector = slideImagesDequeSelector;
+    this.render();
   }
 
   renderImages = () => {

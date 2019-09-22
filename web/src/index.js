@@ -1,9 +1,12 @@
-import "@babel/polyfill";
+// import "@babel/polyfill"; // for web-pack
+import { Header } from "./components/Header/Header.js";
 import { MiniCarousel } from "./components/MiniCarousel/MiniCarousel.js";
 import { MainCarousel } from "./components/MainCarousel/MainCarousel.js";
 import { $ } from "./utils/util.js";
 import { miniImages } from "./image_objs/miniImage.js";
 import mainImagesObj from "./image_objs/mainImage.js";
+
+// const header = new Header($("header"));
 
 const miniCarousel = new MiniCarousel(
   $(".mini-container"),
@@ -14,5 +17,5 @@ const miniCarousel = new MiniCarousel(
 
 const mainCarousel = new MainCarousel($(".main-container"), mainImagesObj);
 
-miniCarousel.render();
-mainCarousel.render();
+// miniCarousel.render();
+// mainCarousel.render();

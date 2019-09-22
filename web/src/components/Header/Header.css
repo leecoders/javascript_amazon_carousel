@@ -1,0 +1,63 @@
+.header {
+  z-index: 100;
+  position: fixed;
+  margin-top: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #dbdbdb;
+  background: #fff;
+  color: #08a600;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
+}
+
+.header > span {
+  position: relative;
+  top: 5px;
+  margin: 15px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.header .menu-wrapper {
+  display: inline-block;
+  position: absolute;
+  top: 17px;
+}
+
+.header .header-menu {
+  color: #495057;
+  font-size: 25px;
+  font-weight: 100;
+  margin-left: 15px;
+}
+
+.header .user-wrapper {
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #495057;
+}
+
+.header .user-wrapper span {
+  position: absolute;
+  top: 13px;
+  right: 60px;
+  width: 200px;
+  text-align: right;
+  font-size: 15px;
+}
+
+.header .user-wrapper #user-name-area {
+  font-weight: bold;
+}
+
+.header .user-wrapper #user-button {
+  margin-left: 10px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: #fff url("../../images/user.png") no-repeat 50% 50%;
+  background-size: 30px 30px;
+  outline: none;
+}

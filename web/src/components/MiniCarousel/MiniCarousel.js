@@ -11,6 +11,7 @@ class MiniCarousel {
     this.leftEnd = leftEnd;
     this.transDist = transDist;
     this.intervalId = undefined;
+    this.render();
   }
 
   startInterval = slideCarousel => {
@@ -36,7 +37,6 @@ class MiniCarousel {
       this.transDist,
       "#mini-carousel-image-deque"
     );
-    slideCarousel.render();
     this.startInterval(slideCarousel);
     $(".img-container").addEventListener("click", e => {
       const imageId = e.target.id;

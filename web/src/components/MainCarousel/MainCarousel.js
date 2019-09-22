@@ -13,6 +13,7 @@ class MainCarousel {
     this.cards = undefined;
     this.cardButtons = undefined;
     this.buttonCheckedNow = undefined;
+    this.render();
   }
 
   getShorterDirection = beforeSelectedButton => {
@@ -75,7 +76,6 @@ class MainCarousel {
         handleButtonCheckedNowChange: this.handleButtonCheckedNowChange
       }
     );
-    this.upperCarousel.render();
   };
 
   setLowerCarousel = () => {
@@ -88,7 +88,6 @@ class MainCarousel {
         handleSlideButtonClick: this.handleSlideButtonClick
       }
     );
-    this.lowerCarousel.render();
   };
 
   render = () => {
