@@ -9,4 +9,5 @@ export default /*html*/ `
 <div class="user-wrapper">
     <span><p3 id="user-name-area"></p3>님</span>
     <button id="user-button" type="button"></button>
+    <div class="user-bubble-container"></div>
 </div>`;
