@@ -1,63 +1,65 @@
-.header {
+header {
   z-index: 100;
   position: fixed;
   margin-top: 0;
   width: 100%;
-  height: 70px;
+  height: 4.5rem;
   border-bottom: 1px solid #dbdbdb;
-  background: #fff;
-  color: #08a600;
+  background: #232f3e;
+  color: #fff;
   box-shadow: 0 4px 11px rgba(0, 0, 0, 0.1);
 }
 
-.header > span {
+header > span {
   position: relative;
-  top: 5px;
-  margin: 15px;
+  top: 0.6rem;
+  margin: 1rem;
   font-size: 40px;
   font-weight: bold;
 }
 
-.header .menu-wrapper {
+header .menu-wrapper {
   display: inline-block;
   position: absolute;
-  top: 17px;
+  top: 1.3rem;
 }
 
-.header .header-menu {
-  color: #495057;
+header .header-menu {
+  color: #f08804;
   font-size: 25px;
   font-weight: 100;
-  margin-left: 15px;
+  margin-left: 1rem;
 }
 
-.header .user-wrapper {
+header .user-wrapper {
   display: inline-block;
   position: absolute;
   top: 12px;
   right: 20px;
-  color: #495057;
+  color: #fff;
 }
 
-.header .user-wrapper span {
+header .user-wrapper span {
   position: absolute;
-  top: 13px;
-  right: 60px;
+  top: 1rem;
+  right: 4rem;
   width: 200px;
   text-align: right;
   font-size: 15px;
 }
 
-.header .user-wrapper #user-name-area {
+header .user-wrapper #user-name-area {
   font-weight: bold;
 }
 
-.header .user-wrapper #user-button {
+header .user-wrapper #user-button {
+  margin-top: -0.1rem;
   margin-left: 10px;
   width: 45px;
   height: 45px;
   border: none;
-  background: #fff url("../../images/user.png") no-repeat 50% 50%;
-  background-size: 30px 30px;
+  background: #232f3e url("../../images/user3.png") no-repeat 50% 50%;
+  background-size: 2.5rem 2.5rem;
   outline: none;
+  cursor: pointer;
 }
