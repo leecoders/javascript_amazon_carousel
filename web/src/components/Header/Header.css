@@ -12,21 +12,21 @@ header {
 
 header > span {
   position: relative;
-  top: 0.6rem;
+  top: 0.4rem;
   margin: 1rem;
-  font-size: 40px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 header .menu-wrapper {
   display: inline-block;
   position: absolute;
-  top: 1.3rem;
+  top: 1rem;
 }
 
 header .header-menu {
   color: #fff;
-  font-size: 25px;
+  font-size: 2rem;
   font-weight: 100;
   margin-left: 1rem;
 }
@@ -34,8 +34,8 @@ header .header-menu {
 header .user-wrapper {
   display: inline-block;
   position: absolute;
-  top: 12px;
-  right: 20px;
+  top: 0.6rem;
+  right: 1.4rem;
   color: #fff;
 }
 
@@ -43,9 +43,13 @@ header .user-wrapper span {
   position: absolute;
   top: 1rem;
   right: 4rem;
-  width: 200px;
+  width: 13rem;
   text-align: right;
-  font-size: 15px;
+  font-size: 1.2rem;
+}
+
+header .user-wrapper span p3 {
+  margin-right: 0.2rem;
 }
 
 header .user-wrapper #user-name-area {
@@ -53,10 +57,9 @@ header .user-wrapper #user-name-area {
 }
 
 header .user-wrapper #user-button {
-  margin-top: -0.1rem;
-  margin-left: 10px;
-  width: 45px;
-  height: 45px;
+  margin-left: 0.4rem;
+  width: 3rem;
+  height: 3rem;
   border: none;
   background: #232f3e url("../../images/user3.png") no-repeat 50% 50%;
   background-size: 2.5rem 2.5rem;

@@ -1,4 +1,4 @@
-import "@babel/polyfill"; // for web-pack
+// import "@babel/polyfill"; // for web-pack
 import { Header } from "./components/Header/Header.js";
 import { Nav } from "./components/Nav/Nav.js";
 import { Section } from "./components/Section/Section.js";
