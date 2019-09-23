@@ -1,4 +1,4 @@
-# WEEK3 CHECK LIST
+## FE CHECK LIST
 
 ### Mini Carousel
 

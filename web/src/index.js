@@ -5,7 +5,7 @@ import { Section } from "./components/Section/Section.js";
 import { Footer } from "./components/Footer/Footer.js";
 import { MiniCarousel } from "./components/MiniCarousel/MiniCarousel.js";
 import { MainCarousel } from "./components/MainCarousel/MainCarousel.js";
-import { $ } from "./utils/util.js";
+import { $, isOutSideOfLayerClicked, closeLayer } from "./utils/util.js";
 import { miniImages } from "./image_objs/miniImage.js";
 import mainImagesObj from "./image_objs/mainImage.js";
 
@@ -14,11 +14,13 @@ const nav = new Nav($("nav"));
 const section = new Section($("section"));
 const footer = new Footer($("footer"));
 
-// const miniCarousel = new MiniCarousel(
-//   $(".mini-container"),
-//   miniImages,
-//   miniImages.length,
-//   -20
-// );
-
-// const mainCarousel = new MainCarousel($(".main-container"), mainImagesObj);
+document.body.addEventListener(
+  "click",
+  e => {
+    const layer = $(".layer-on");
+    if (!layer) return;
+    if (isOutSideOfLayerClicked(layer, e)) closeLayer(layer);
+    e.stopPropagation();
+  },
+  { capture: true }
+);
