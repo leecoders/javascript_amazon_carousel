@@ -1,5 +1,7 @@
+const serverUrl = "http://localhost:3000/";
+
 const fetchSignInResult = (id, password) => {
-  return fetch("http://localhost:3000/signin/submit", {
+  return fetch(serverUrl + "signin/submit", {
     method: "POST",
     body: JSON.stringify({ id, password }),
     headers: {
@@ -7,7 +9,7 @@ const fetchSignInResult = (id, password) => {
     }
   })
     .then(res => res.json())
-    .then(response => response) // true or false
+    .then(response => response)
     .catch(error => "error");
 };
 
