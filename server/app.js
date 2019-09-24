@@ -4,24 +4,32 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
+const mysql = require("mysql2");
+
+const Model = require("./model/model.js");
+const connection = mysql.createConnection({
+  host: "106.10.34.142",
+  port: "3306",
+  user: "leecoders",
+  password: "jmlee94",
+  database: "amazon"
+});
 
 const indexRouter = require("./routes/index");
-const { signinRouter } = require("./routes/signin");
+const { signinRouter, passModel } = require("./routes/signin");
 const usersRouter = require("./routes/users");
 
 const app = express();
+const model = new Model(connection);
+
+passModel(model);
 
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use(cors());
-
-app.use("/signin/submit", (req, res) => {
-  console.log(req.body);
-});
 
 app.use("/", indexRouter);
 app.use("/signin", signinRouter);

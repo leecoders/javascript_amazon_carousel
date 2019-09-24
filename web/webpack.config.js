@@ -1,19 +1,5 @@
 const path = require("path");
 
-// const JS_ENTRY_FILE = path.resolve(
-//   __dirname,
-//   "src",
-//   "assets",
-//   "javascript",
-//   "index.js"
-// );
-// const SCSS_ENTRY_FILE = path.resolve(
-//   __dirname,
-//   "src",
-//   "assets",
-//   "scss",
-//   "main.scss"
-// );
 const MODE = process.env.WEBPACK_ENV;
 
 const OUTPUT_DIR = path.join(__dirname, "src/static");

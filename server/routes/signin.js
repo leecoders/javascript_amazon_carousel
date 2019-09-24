@@ -2,9 +2,14 @@ const express = require("express");
 const router = express.Router();
 const signinRouter = router;
 
-// router.use("/submit", (req, res) => {
-//   const { id, password } = req.body;
-//   console.log(id, password);
-// });
+let model;
 
-module.exports = { signinRouter };
+const passModel = modelFromApp => {
+  model = modelFromApp;
+};
+
+router.use("/submit", (req, res) => {
+  model.checkLogin(req, res);
+});
+
+module.exports = { signinRouter, passModel };
