@@ -1,6 +1,5 @@
 import userInfoLayerTemplate from "./template.js";
 import { $ } from "../../utils/util.js";
-import { fetchSignInResult } from "../../utils/fetch.js";
 
 class UserInfoLayer {
   constructor(parentElement) {
@@ -10,7 +9,6 @@ class UserInfoLayer {
 
   setEvent = () => {
     this.loginButton.addEventListener("click", () => {
-      fetchSignInResult("123", "123");
       location.href = "src/pages/signin";
     });
   };
