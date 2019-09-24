@@ -15,8 +15,10 @@ document.body.addEventListener(
   e => {
     const layer = $(".layer-on");
     if (!layer) return;
-    if (isOutSideOfLayerClicked(layer, e)) closeLayer(layer);
-    e.stopPropagation();
+    if (isOutSideOfLayerClicked(layer, e)) {
+      closeLayer(layer);
+      e.stopPropagation();
+    }
   },
   { capture: true }
 );

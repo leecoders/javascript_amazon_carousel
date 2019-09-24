@@ -8,14 +8,18 @@ class Header {
     this.render();
   }
 
+  setEvent = () => {
+    this.userInfoButton.addEventListener("click", () => {
+      toggleUserClickState(this.userBubble);
+    });
+  };
+
   render() {
     this.parentElement.innerHTML = headerTemplate;
     this.userInfoButton = $("#user-button");
     this.userInfoLayer = new UserInfoLayer($(".user-bubble-container"));
     this.userBubble = $(".user-bubble-container");
-    this.userInfoButton.addEventListener("click", () => {
-      toggleUserClickState(this.userBubble);
-    });
+    this.setEvent();
   }
 }
 
