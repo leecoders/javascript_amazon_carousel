@@ -1,0 +1,26 @@
+section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.section-container {
+  width: 100%;
+  height: 100%;
+}
+
+.main-container {
+  position: relative;
+  top: 27rem;
+  width: 75rem;
+  height: 50rem;
+  margin: 0 auto;
+}
+
+.mini-container {
+  position: relative;
+  top: 35rem;
+  width: 75rem;
+  height: 20rem;
+  margin: 0 auto;
+}

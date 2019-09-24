@@ -4,6 +4,9 @@ export default /*html*/ `
     <div id="admin-page-button" class="bubble-list">
       <span>관리자 페이지</span>
     </div>
+    <div id="main-page-button" class="bubble-list">
+      <span>메인 페이지</span>
+    </div>
     <div id="user-info-button" class="bubble-list">
       <span>내 정보</span>
     </div>
