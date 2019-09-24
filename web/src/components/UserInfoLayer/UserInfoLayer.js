@@ -1,5 +1,5 @@
 import userInfoLayerTemplate from "./template.js";
-import { $ } from "../../utils/util.js";
+import { $, closeLayer } from "../../utils/util.js";
 import { SectionForAdmin } from "../SectionForAdmin/SectionForAdmin.js";
 
 class UserInfoLayer {
@@ -12,7 +12,15 @@ class UserInfoLayer {
     this.loginButton.addEventListener("click", () => {
       location.href = "src/pages/signin";
     });
-    this.mainPageButton.addEventListener("click", () => {});
+    this.mainPageButton.addEventListener("click", () => {
+      location.href = "../../../";
+    });
+    this.adminPageButton.addEventListener("click", () => {
+      if (location.pathname != "/src/pages/admin/") {
+        location.href = "src/pages/admin";
+      }
+      closeLayer($(".layer-on"));
+    });
   };
 
   render() {
