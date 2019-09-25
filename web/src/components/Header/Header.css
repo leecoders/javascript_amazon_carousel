@@ -33,6 +33,7 @@ header .header-menu {
   padding: 1.3rem 2rem 0rem 0.5rem;
   height: 3.3rem;
   border-right: solid 1px #666666;
+  cursor: pointer;
 }
 
 header .first-menu {
