@@ -8,8 +8,15 @@ class MenuForAdmin {
   }
 
   setEvent = () => {
-    this.manageUserMenu.addEventListener("click", () => {});
-    this.manageItemMenu.addEventListener("click", () => {});
+    $(".manage-user-container").style.visibility = "visible";
+    this.manageUserMenu.addEventListener("click", () => {
+      $(".manage-item-container").style.visibility = "hidden";
+      $(".manage-user-container").style.visibility = "visible";
+    });
+    this.manageItemMenu.addEventListener("click", () => {
+      $(".manage-item-container").style.visibility = "visible";
+      $(".manage-user-container").style.visibility = "hidden";
+    });
   };
 
   render = () => {

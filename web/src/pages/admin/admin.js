@@ -3,8 +3,8 @@ import { Footer } from "../../components/Footer/Footer.js";
 import { $, isOutSideOfLayerClicked, closeLayer } from "../../utils/util.js";
 import { SectionForAdmin } from "../../components/SectionForAdmin/SectionForAdmin.js";
 
-const header = new Header($("header"), "admin");
 const sectionForAdmin = new SectionForAdmin($("section"));
+const header = new Header($("header"), "admin");
 const footer = new Footer($("footer"));
 
 // 레이어 -> 영역 넘어간 곳 클릭 이벤트 처리
