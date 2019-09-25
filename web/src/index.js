@@ -5,7 +5,7 @@ import { Section } from "./components/Section/Section.js";
 import { Footer } from "./components/Footer/Footer.js";
 import { $, isOutSideOfLayerClicked, closeLayer } from "./utils/util.js";
 
-const header = new Header($("header"));
+const header = new Header($("header"), "main");
 const nav = new Nav($("nav"));
 const section = new Section($("section"));
 const footer = new Footer($("footer"));

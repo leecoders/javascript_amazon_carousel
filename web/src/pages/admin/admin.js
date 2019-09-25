@@ -3,7 +3,7 @@ import { Footer } from "../../components/Footer/Footer.js";
 import { $, isOutSideOfLayerClicked, closeLayer } from "../../utils/util.js";
 import { SectionForAdmin } from "../../components/SectionForAdmin/SectionForAdmin.js";
 
-const header = new Header($("header"));
+const header = new Header($("header"), "admin");
 const sectionForAdmin = new SectionForAdmin($("section"));
 const footer = new Footer($("footer"));
 
