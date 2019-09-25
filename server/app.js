@@ -8,7 +8,7 @@ const mysql = require("mysql2");
 require("dotenv").config();
 
 const Model = require("./model/model.js");
-const connection = mysql.createConnection({
+const pool = mysql.createPool({
   host: process.env.HOST,
   port: process.env.PORT,
   user: process.env.USER,
@@ -21,7 +21,7 @@ const { signinRouter, passModel } = require("./routes/signin");
 const usersRouter = require("./routes/users");
 
 const app = express();
-const model = new Model(connection);
+const model = new Model(pool);
 
 passModel(model);
 

@@ -1,11 +1,11 @@
 class Model {
-  constructor(connection) {
-    this.connection = connection;
+  constructor(pool) {
+    this.pool = pool;
   }
 
   checkLogin(req, res) {
     const { id, password } = req.body;
-    this.connection.query(
+    this.pool.query(
       `select * from USER where USER_ID=? and USER_PASSWORD=?`,
       [id, password],
       (error, results) => {
