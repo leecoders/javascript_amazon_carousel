@@ -25,10 +25,10 @@ const fetchAllUsers = () => {
     .catch(error => "error");
 };
 
-const fetchGradeChange = upOrDown => {
+const fetchGradeChange = (id, destGrade) => {
   return fetch(serverUrl + "users/change-grade", {
     method: "POST",
-    body: JSON.stringify({ upOrDown }),
+    body: JSON.stringify({ id, destGrade }),
     headers: {
       "Content-Type": "application/json"
     }
@@ -38,4 +38,4 @@ const fetchGradeChange = upOrDown => {
     .catch(error => "error");
 };
 
-export { fetchSignInResult, fetchAllUsers };
+export { fetchSignInResult, fetchAllUsers, fetchGradeChange };
