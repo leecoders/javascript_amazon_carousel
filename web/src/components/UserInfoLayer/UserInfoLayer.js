@@ -10,7 +10,12 @@ class UserInfoLayer {
 
   setEvent = () => {
     this.loginButton.addEventListener("click", () => {
+      if (location.pathname != "/") {
+        location.href = "../signin";
+        return;
+      }
       location.href = "src/pages/signin";
+      closeLayer($(".layer-on"));
     });
     this.mainPageButton.addEventListener("click", () => {
       if (location.pathname != "/") {
