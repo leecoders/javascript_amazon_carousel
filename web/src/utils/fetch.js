@@ -13,4 +13,29 @@ const fetchSignInResult = (id, password) => {
     .catch(error => "error");
 };
 
-export { fetchSignInResult };
+const fetchAllUsers = () => {
+  return fetch(serverUrl + "users/all", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => res.json())
+    .then(response => response)
+    .catch(error => "error");
+};
+
+const fetchGradeChange = upOrDown => {
+  return fetch(serverUrl + "users/change-grade", {
+    method: "POST",
+    body: JSON.stringify({ upOrDown }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => res.json())
+    .then(response => response)
+    .catch(error => "error");
+};
+
+export { fetchSignInResult, fetchAllUsers };
