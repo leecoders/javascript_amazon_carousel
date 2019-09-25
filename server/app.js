@@ -5,14 +5,15 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const mysql = require("mysql2");
+require("dotenv").config();
 
 const Model = require("./model/model.js");
 const connection = mysql.createConnection({
-  host: "106.10.34.142",
-  port: "3306",
-  user: "leecoders",
-  password: "jmlee94",
-  database: "amazon"
+  host: process.env.HOST,
+  port: process.env.PORT,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE
 });
 
 const indexRouter = require("./routes/index");

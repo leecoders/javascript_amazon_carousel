@@ -13,7 +13,10 @@ class UserInfoLayer {
       location.href = "src/pages/signin";
     });
     this.mainPageButton.addEventListener("click", () => {
-      location.href = "../../../";
+      if (location.pathname != "/") {
+        location.href = "../../../";
+      }
+      closeLayer($(".layer-on"));
     });
     this.adminPageButton.addEventListener("click", () => {
       if (location.pathname != "/src/pages/admin/") {

@@ -9,8 +9,6 @@ class SectionForAdmin {
 
   render() {
     this.parentElement.insertAdjacentHTML("beforeend", sectionForAdminTemplate);
-    this.sectionForAdmin = $(".section-for-admin-container");
-    this.sectionForAdmin.style.visibility = "hidden";
   }
 }
 
