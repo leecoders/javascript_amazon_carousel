@@ -45,6 +45,9 @@
   height: 2rem;
   font-size: 1.5rem;
 }
+.user-info-title {
+  opacity: 0.4;
+}
 
 .user-grade-button-container {
   position: absolute;
