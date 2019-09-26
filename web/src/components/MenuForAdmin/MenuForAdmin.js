@@ -9,6 +9,7 @@ class MenuForAdmin {
 
   setEvent = () => {
     $(".manage-user-container").style.visibility = "visible"; // 유저 페이지를 default로 보여줌
+    $(".manage-item-container").style.visibility = "hidden";
     this.manageUserMenu.addEventListener("click", () => {
       $(".manage-item-container").style.visibility = "hidden";
       $(".manage-user-container").style.visibility = "visible";

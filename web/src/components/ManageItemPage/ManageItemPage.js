@@ -45,6 +45,10 @@ class ManageItemPage {
 
   selectCategory = categoryIdx => {
     this.highlightCategory(categoryIdx);
+    for (let i = 0; i < this.categoryContainer.children.length; ++i) {
+      $(`#item-list-box-${i}`).style.display = "none";
+    }
+    $(`#item-list-box-${categoryIdx}`).style.display = "";
   };
 
   setAddItemEvent = async () => {
