@@ -13,10 +13,12 @@ class MenuForAdmin {
     this.manageUserMenu.addEventListener("click", () => {
       $(".manage-item-container").style.visibility = "hidden";
       $(".manage-user-container").style.visibility = "visible";
+      window.scrollTo(0, 0);
     });
     this.manageItemMenu.addEventListener("click", () => {
       $(".manage-item-container").style.visibility = "visible";
       $(".manage-user-container").style.visibility = "hidden";
+      window.scrollTo(0, 0);
     });
   };
 

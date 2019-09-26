@@ -76,6 +76,7 @@ class ManageItemPage {
       this.itemSummary = $("#item-input-summary").value;
       if (this.checkFillingAllContents()) {
         await this.submitItem();
+        location.reload();
       } else {
         console.log("모든 목록을 채워주세요.");
       }
@@ -106,6 +107,7 @@ class ManageItemPage {
       const itemName = this.itemListPageArray[categoryIdx].itemInfoList[itemIdx]
         .ITEM_NAME;
       const result = await fetchDeleteItem(categoryName, itemName);
+      location.reload();
     });
   };
 
