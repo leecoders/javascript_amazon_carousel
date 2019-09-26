@@ -1,7 +1,9 @@
-.item-list-box {
+.item-list-container {
   position: relative;
+}
+
+.item-list-box {
+  position: absolute;
   width: 100%;
   height: auto;
-  padding: 2rem 0;
-  border-bottom: 1px solid #dbdbdb;
 }

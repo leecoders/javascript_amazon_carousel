@@ -15,7 +15,7 @@ class ItemListPage {
     for (let i = 0; i < this.itemLength; ++i) {
       this.ListItemArray.push(
         new ListItem(
-          $(`#item-list-box-${i}`),
+          $(`#item-list-box-${this.categoryIdx}`),
           this.itemInfoList[i].ITEM_NAME,
           this.itemInfoList[i].ITEM_CATEGORY,
           this.itemInfoList[i].ITEM_SUMMARY,

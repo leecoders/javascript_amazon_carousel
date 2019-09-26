@@ -11,7 +11,9 @@ class ListItem {
   }
 
   render = () => {
-    this.parentElement.innerHTML = /*html*/ `
+    this.parentElement.insertAdjacentHTML(
+      "beforeend",
+      /*html*/ `
     <div class="item-container" id="item-${this.idx}">
         <div class="item-image"></div>
         <div class="item-info">
@@ -40,7 +42,8 @@ class ListItem {
             }"></button>
         </div>
     </div>
-    `;
+    `
+    );
   };
 }
 
