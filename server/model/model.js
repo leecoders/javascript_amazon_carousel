@@ -22,6 +22,33 @@ class Model {
       }
     );
   }
+
+  getAllUsers(req, res) {
+    this.pool.query(`select * from USER`, (error, results) => {
+      if (error) {
+        res.send({ message: "db not connected" });
+        throw error;
+      } else {
+        res.send({ message: "success", data: results });
+      }
+    });
+  }
+
+  changeUserGrade(req, res) {
+    const { id, destGrade } = req.body;
+    this.pool.query(
+      `update USER set USER_GRADE=? where USER_ID=?`,
+      [destGrade, id],
+      (error, results) => {
+        if (error) {
+          res.send({ message: "db not connected" });
+          throw error;
+        } else {
+          res.send({ message: "success" });
+        }
+      }
+    );
+  }
 }
 
 module.exports = Model;

@@ -1,9 +1,19 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const usersRouter = router;
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+let model;
+
+const passModelToUsers = modelFromApp => {
+  model = modelFromApp;
+};
+
+router.use("/all", function(req, res, next) {
+  model.getAllUsers(req, res);
 });
 
-module.exports = router;
+router.use("/change-grade", function(req, res, next) {
+  model.changeUserGrade(req, res);
+});
+
+module.exports = { usersRouter, passModelToUsers };

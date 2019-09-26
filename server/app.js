@@ -17,13 +17,14 @@ const pool = mysql.createPool({
 });
 
 const indexRouter = require("./routes/index");
-const { signinRouter, passModel } = require("./routes/signin");
-const usersRouter = require("./routes/users");
+const { signinRouter, passModelToSignin } = require("./routes/signin");
+const { usersRouter, passModelToUsers } = require("./routes/users");
 
 const app = express();
 const model = new Model(pool);
 
-passModel(model);
+passModelToSignin(model);
+passModelToUsers(model);
 
 app.use(logger("dev"));
 app.use(express.json());

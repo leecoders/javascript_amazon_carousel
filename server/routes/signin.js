@@ -4,7 +4,7 @@ const signinRouter = router;
 
 let model;
 
-const passModel = modelFromApp => {
+const passModelToSignin = modelFromApp => {
   model = modelFromApp;
 };
 
@@ -12,4 +12,4 @@ router.use("/submit", (req, res) => {
   model.checkLogin(req, res);
 });
 
-module.exports = { signinRouter, passModel };
+module.exports = { signinRouter, passModelToSignin };

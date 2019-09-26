@@ -29,3 +29,7 @@ setImage = () => {
   ![broken_css](https://user-images.githubusercontent.com/47619140/65154519-9c946100-da66-11e9-822f-ccdd5c462ac5.png)
 
 ### element.children은 자식 요소에 대한 `HTMLCollection` 타입을 반환하고 `children[index]`를 통해 접근할 수 있지만 `Array` 타입이 아니기 때문에 forEach 등의 배열 프로토타입 메서드는 사용할 수 없다.
+
+### CSS) 화면에서 안보이게 하기
+1. `display: none;` : 아예 사라지게 하는 것. 보이지도 않고 해당 공간도 존재하지 않게 됨
+2. `visibility: hidden;` : 보이지만 않고 해당 공간은 존재. width와 height값을 주었다면 그만큼 공간은 존재하게 됨
