@@ -19,7 +19,7 @@
   border-bottom: 1px solid #dbdbdb;
 }
 
-.manage-item-catecory-container {
+.manage-item-category-container {
   position: absolute;
   bottom: 1rem;
   color: #808080;
@@ -29,18 +29,14 @@
   border-right: 1px solid #cccccc;
 }
 
-.item-category {
+.item-category-box {
   padding: 0 2rem;
   border-left: 1px solid #dbdbdb;
   cursor: pointer;
 }
 
-.item-category > span:hover {
-  opacity: 0.5;
-}
-
-.item-category > span:active {
-  opacity: 0.2;
+.item-category:active {
+  opacity: 0.3;
 }
 
 .item-page-container {

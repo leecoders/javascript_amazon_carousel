@@ -34,6 +34,17 @@ class ManageItemPage {
     );
   };
 
+  highlightCategory = idx => {
+    for (let i = 0; i < this.categoryContainer.children.length; ++i) {
+      $("#item-category-" + i).style.opacity = "1";
+    }
+    $("#item-category-" + idx).style.opacity = "0.3";
+  };
+
+  selectCategory = categoryIdx => {
+    this.highlightCategory(categoryIdx);
+  };
+
   setAddItemEvent = async () => {
     this.itemImageContainer.addEventListener("click", () => {
       $("#item-upload-button").click();
@@ -61,15 +72,22 @@ class ManageItemPage {
     });
   };
 
-  setOthersEvent = () => {};
+  setOthersEvent = () => {
+    this.categoryContainer.addEventListener("click", e => {
+      if (e.target.className != "item-category") return;
+      this.selectCategory(e.target.id.split("category-")[1]);
+    });
+  };
 
   render() {
     this.parentElement.insertAdjacentHTML("beforeend", manageItemPageTemplate);
     this.itemImageContainer = $(".item-add-image");
     this.selectImageButton = $("#item-upload-button");
     this.itemSubmitButton = $("#item-add-button");
-    this.categoryContainer = $("manage-item-category-container");
+    this.categoryContainer = $(".manage-item-category-container");
     this.setAddItemEvent();
+    this.setOthersEvent();
+    this.selectCategory(0);
   }
 }
 
