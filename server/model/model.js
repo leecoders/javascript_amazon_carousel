@@ -84,6 +84,22 @@ class Model {
       }
     );
   }
+
+  getItemInfoList(req, res) {
+    const { categoryName } = req.body;
+    this.pool.query(
+      `select * from ITEM where ITEM_CATEGORY=?`,
+      [categoryName],
+      (error, results) => {
+        if (error) {
+          res.send({ message: "db not connected" });
+          throw error;
+        } else {
+          res.send({ message: "success", data: results });
+        }
+      }
+    );
+  }
 }
 
 module.exports = Model;

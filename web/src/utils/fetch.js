@@ -66,10 +66,24 @@ const fetchAddItem = (image, name, category, summary) => {
     .catch(error => "error");
 };
 
+const fetchItemInfoList = categoryName => {
+  return fetch(serverUrl + "items/item-info-list", {
+    method: "POST",
+    body: JSON.stringify({ categoryName }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => res.json())
+    .then(response => response)
+    .catch(error => "error");
+};
+
 export {
   fetchSignInResult,
   fetchAllUsers,
   fetchGradeChange,
   fetchCheckItemName,
-  fetchAddItem
+  fetchAddItem,
+  fetchItemInfoList
 };

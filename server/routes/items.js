@@ -16,4 +16,8 @@ router.use("/add", function(req, res) {
   model.addItem(req, res);
 });
 
+router.use("/item-info-list", function(req, res) {
+  model.getItemInfoList(req, res);
+});
+
 module.exports = { itemsRouter, passModelToItems };

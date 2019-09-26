@@ -35,7 +35,7 @@
   cursor: pointer;
 }
 
-.item-category:active {
+.item-category-name:active {
   opacity: 0.3;
 }
 
@@ -176,7 +176,7 @@
   height: 80%;
   border: 2px solid #fff;
   border-radius: 0.5rem;
-  background: #37b24d url(../../images/save2.png) no-repeat 50% 50%;
+  background: #2b8a3e url(../../images/save2.png) no-repeat 50% 50%;
   background-size: 3rem 3rem;
   outline: none;
   cursor: pointer;

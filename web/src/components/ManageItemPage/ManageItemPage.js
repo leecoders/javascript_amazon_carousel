@@ -1,11 +1,13 @@
 import manageItemPageTemplate from "./template.js";
 import { $ } from "../../utils/util.js";
 import { fetchCheckItemName, fetchAddItem } from "../../utils/fetch.js";
+import { ItemListPage } from "../../components/ItemListPage/ItemListPage.js";
 
 class ManageItemPage {
   constructor(parentElement) {
     this.parentElement = parentElement;
     this.itemImage;
+    this.itemListPageArray = [];
     this.render();
   }
 
@@ -79,12 +81,25 @@ class ManageItemPage {
     });
   };
 
+  setItemLists = () => {
+    for (let i = 0; i < this.categoryContainer.children.length; ++i) {
+      this.itemListPageArray.push(
+        new ItemListPage(
+          $(".item-list-container"),
+          i,
+          $(`#item-category-${i}`).innerHTML
+        )
+      );
+    }
+  };
+
   render() {
     this.parentElement.insertAdjacentHTML("beforeend", manageItemPageTemplate);
     this.itemImageContainer = $(".item-add-image");
     this.selectImageButton = $("#item-upload-button");
     this.itemSubmitButton = $("#item-add-button");
     this.categoryContainer = $(".manage-item-category-container");
+    this.setItemLists();
     this.setAddItemEvent();
     this.setOthersEvent();
     this.selectCategory(0);
