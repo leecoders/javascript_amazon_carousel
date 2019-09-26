@@ -1,5 +1,11 @@
 # 멤버십 프로젝트 - 아마존 저장소
 
+## 프론트엔드 배포
+[링크](https://boost-leecoders-amazon.netlify.com/)
+
+## 백엔드 배포
+[미완료]
+
 ## 컴포넌트 관계도
 ![컴포넌트 관계도](https://user-images.githubusercontent.com/47619140/65292226-8c2cd500-db91-11e9-97d5-b638975e49de.png)
 
