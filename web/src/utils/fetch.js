@@ -79,11 +79,25 @@ const fetchItemInfoList = categoryName => {
     .catch(error => "error");
 };
 
+const fetchDeleteItem = (categoryName, itemName) => {
+  return fetch(serverUrl + "items/delete", {
+    method: "POST",
+    body: JSON.stringify({ categoryName, itemName }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => res.json())
+    .then(response => response)
+    .catch(error => "error");
+};
+
 export {
   fetchSignInResult,
   fetchAllUsers,
   fetchGradeChange,
   fetchCheckItemName,
   fetchAddItem,
-  fetchItemInfoList
+  fetchItemInfoList,
+  fetchDeleteItem
 };

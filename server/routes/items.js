@@ -20,4 +20,8 @@ router.use("/item-info-list", function(req, res) {
   model.getItemInfoList(req, res);
 });
 
+router.use("/delete", function(req, res) {
+  model.deleteItem(req, res);
+});
+
 module.exports = { itemsRouter, passModelToItems };

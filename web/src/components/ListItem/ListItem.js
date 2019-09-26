@@ -38,8 +38,8 @@ class ListItem {
         </div>
         <div class="item-delete-button-container">
             <button type="button" class="item-delete-button" id="item-delete-button-${
-              this.idx
-            }"></button>
+              this.category
+            }-${this.idx}"></button>
         </div>
     </div>
     `

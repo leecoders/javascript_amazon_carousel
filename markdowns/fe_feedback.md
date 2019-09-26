@@ -33,3 +33,6 @@ setImage = () => {
 ### CSS) 화면에서 안보이게 하기
 1. `display: none;` : 아예 사라지게 하는 것. 보이지도 않고 해당 공간도 존재하지 않게 됨
 2. `visibility: hidden;` : 보이지만 않고 해당 공간은 존재. width와 height값을 주었다면 그만큼 공간은 존재하게 됨
+- `display: none;`의 반대를 JS에서 설정하기 위해
+  - inline element일 경우 `inline`
+  - block element일 경우 `block`

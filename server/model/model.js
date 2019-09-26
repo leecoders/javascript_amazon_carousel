@@ -100,6 +100,22 @@ class Model {
       }
     );
   }
+
+  deleteItem(req, res) {
+    const { categoryName, itemName } = req.body;
+    this.pool.query(
+      `delete from ITEM where ITEM_CATEGORY=? and ITEM_NAME=?`,
+      [categoryName, itemName],
+      (error, results) => {
+        if (error) {
+          res.send({ message: "db not connected" });
+          throw error;
+        } else {
+          res.send({ message: "success" });
+        }
+      }
+    );
+  }
 }
 
 module.exports = Model;

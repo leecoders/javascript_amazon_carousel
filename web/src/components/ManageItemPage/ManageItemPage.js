@@ -1,6 +1,10 @@
 import manageItemPageTemplate from "./template.js";
 import { $ } from "../../utils/util.js";
-import { fetchCheckItemName, fetchAddItem } from "../../utils/fetch.js";
+import {
+  fetchCheckItemName,
+  fetchAddItem,
+  fetchDeleteItem
+} from "../../utils/fetch.js";
 import { ItemListPage } from "../../components/ItemListPage/ItemListPage.js";
 
 class ManageItemPage {
@@ -85,6 +89,26 @@ class ManageItemPage {
     });
   };
 
+  findCategoryIdx = category => {
+    for (let i = 0; i < this.categoryContainer.children.length; ++i) {
+      if (this.itemListPageArray[i].categoryName == category) {
+        return i;
+      }
+    }
+  };
+
+  setDeleteEvent = async () => {
+    $("body").addEventListener("click", async e => {
+      if (e.target.className != "item-delete-button") return;
+      const categoryAndItem = e.target.id.split("button-")[1];
+      const [categoryName, itemIdx] = categoryAndItem.split("-");
+      const categoryIdx = this.findCategoryIdx(categoryName);
+      const itemName = this.itemListPageArray[categoryIdx].itemInfoList[itemIdx]
+        .ITEM_NAME;
+      const result = await fetchDeleteItem(categoryName, itemName);
+    });
+  };
+
   setItemLists = () => {
     for (let i = 0; i < this.categoryContainer.children.length; ++i) {
       this.itemListPageArray.push(
@@ -106,6 +130,7 @@ class ManageItemPage {
     this.setItemLists();
     this.setAddItemEvent();
     this.setOthersEvent();
+    this.setDeleteEvent();
     this.selectCategory(0);
   }
 }
