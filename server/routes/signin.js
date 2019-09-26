@@ -8,8 +8,8 @@ const passModelToSignin = modelFromApp => {
   model = modelFromApp;
 };
 
-router.use("/submit", (req, res) => {
-  model.checkLogin(req, res);
+router.use("/submit", async (req, res) => {
+  await model.checkLogin(req, res);
 });
 
 module.exports = { signinRouter, passModelToSignin };

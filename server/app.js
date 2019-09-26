@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const cors = require("cors");
-const mysql = require("mysql2");
+const mysql = require("mysql2/promise");
 require("dotenv").config();
 
 const multer = require("multer");
@@ -25,7 +25,8 @@ const pool = mysql.createPool({
   port: process.env.PORT,
   user: process.env.USER,
   password: process.env.PASSWORD,
-  database: process.env.DATABASE
+  database: process.env.DATABASE,
+  connectionLimit: 10
 });
 
 const indexRouter = require("./routes/index");
