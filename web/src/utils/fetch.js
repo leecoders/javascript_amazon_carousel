@@ -38,4 +38,38 @@ const fetchGradeChange = (id, destGrade) => {
     .catch(error => "error");
 };
 
-export { fetchSignInResult, fetchAllUsers, fetchGradeChange };
+const fetchCheckItemName = name => {
+  return fetch(serverUrl + "items/check-item-name", {
+    method: "POST",
+    body: JSON.stringify({ name }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => res.json())
+    .then(response => response)
+    .catch(error => "error");
+};
+
+const fetchAddItem = (image, name, category, summary) => {
+  const formData = new FormData();
+  formData.append("item", image);
+  formData.append("name", name);
+  formData.append("category", category);
+  formData.append("summary", summary);
+  return fetch(serverUrl + "items/add", {
+    method: "POST",
+    body: formData
+  })
+    .then(res => res.json())
+    .then(response => response)
+    .catch(error => "error");
+};
+
+export {
+  fetchSignInResult,
+  fetchAllUsers,
+  fetchGradeChange,
+  fetchCheckItemName,
+  fetchAddItem
+};

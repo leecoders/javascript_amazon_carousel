@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 class Model {
   constructor(pool) {
     this.pool = pool;
@@ -39,6 +41,39 @@ class Model {
     this.pool.query(
       `update USER set USER_GRADE=? where USER_ID=?`,
       [destGrade, id],
+      (error, results) => {
+        if (error) {
+          res.send({ message: "db not connected" });
+          throw error;
+        } else {
+          res.send({ message: "success" });
+        }
+      }
+    );
+  }
+
+  checkItemNameDuplicate(req, res) {
+    const { name } = req.body;
+    this.pool.query(
+      `select * from ITEM where ITEM_NAME=?`,
+      [name],
+      (error, results) => {
+        if (error) {
+          res.send({ message: "db not connected" });
+          throw error;
+        } else {
+          res.send({ message: "success", data: results.length });
+        }
+      }
+    );
+  }
+
+  addItem(req, res) {
+    const itemImage = req.file;
+    const { name, category, summary } = req.body;
+    this.pool.query(
+      `insert into ITEM values (?, ?, ?, ?)`,
+      [itemImage.originalname, name, category, summary],
       (error, results) => {
         if (error) {
           res.send({ message: "db not connected" });

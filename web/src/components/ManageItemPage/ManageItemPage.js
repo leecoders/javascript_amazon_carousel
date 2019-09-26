@@ -1,5 +1,6 @@
 import manageItemPageTemplate from "./template.js";
 import { $ } from "../../utils/util.js";
+import { fetchCheckItemName, fetchAddItem } from "../../utils/fetch.js";
 
 class ManageItemPage {
   constructor(parentElement) {
@@ -8,7 +9,32 @@ class ManageItemPage {
     this.render();
   }
 
-  setEvent = () => {
+  checkFillingAllContents = () => {
+    if (
+      !this.itemImage ||
+      !this.itemName ||
+      !this.itemCategory ||
+      !this.itemSummary
+    )
+      return false;
+    return true;
+  };
+
+  submitItem = async () => {
+    const resultCheckDupicate = await fetchCheckItemName(this.itemName);
+    if (resultCheckDupicate.data) {
+      console.log("이미 존재하는 아이템입니다.");
+      return;
+    }
+    const result = await fetchAddItem(
+      this.itemImage,
+      this.itemName,
+      this.itemCategory,
+      this.itemSummary
+    );
+  };
+
+  setAddItemEvent = async () => {
     this.itemImageContainer.addEventListener("click", () => {
       $("#item-upload-button").click();
     });
@@ -23,17 +49,27 @@ class ManageItemPage {
         this.itemImageContainer.style.backgroundSize = `10rem 10rem`;
       };
     });
-    this.itemSubmitButton.addEventListener("click", () => {
-      console.log(this.itemImage);
+    this.itemSubmitButton.addEventListener("click", async () => {
+      this.itemName = $("#item-input-name").value;
+      this.itemCategory = $("#item-input-category").value;
+      this.itemSummary = $("#item-input-summary").value;
+      if (this.checkFillingAllContents()) {
+        await this.submitItem();
+      } else {
+        console.log("모든 목록을 채워주세요.");
+      }
     });
   };
+
+  setOthersEvent = () => {};
 
   render() {
     this.parentElement.insertAdjacentHTML("beforeend", manageItemPageTemplate);
     this.itemImageContainer = $(".item-add-image");
     this.selectImageButton = $("#item-upload-button");
     this.itemSubmitButton = $("#item-add-button");
-    this.setEvent();
+    this.categoryContainer = $("manage-item-category-container");
+    this.setAddItemEvent();
   }
 }
 
