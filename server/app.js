@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     cb(null, "./public/item_images");
   },
   filename: function(req, file, cb) {
-    cb(null, new Date().valueOf() + file.originalname);
+    cb(null, file.originalname);
   }
 });
 const upload = multer({ storage: storage });
@@ -53,6 +53,8 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
+
+app.use("/public", express.static(__dirname + "/public"));
 
 app.use("/", indexRouter);
 app.use("/signin", signinRouter);

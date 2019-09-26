@@ -1,8 +1,9 @@
 import { $, toggleUserClickState } from "../../utils/util.js";
 
 class ListItem {
-  constructor(parentElement, name, category, summary, idx) {
+  constructor(parentElement, image, name, category, summary, idx) {
     this.parentElement = parentElement;
+    this.image = image;
     this.name = name;
     this.category = category;
     this.summary = summary;
@@ -10,12 +11,21 @@ class ListItem {
     this.render();
   }
 
-  render = () => {
+  setImages = () => {
+    const imageBox = $(`#item-image-${this.category}-${this.idx}`);
+    const imageUrl = `http://localhost:3000/public/item_images/${this.image}`;
+    imageBox.style.background = `url(${imageUrl}) no-repeat 50% 50%`;
+    imageBox.style.backgroundSize = "10rem 10rem";
+  };
+
+  render() {
     this.parentElement.insertAdjacentHTML(
       "beforeend",
       /*html*/ `
     <div class="item-container" id="item-${this.idx}">
-        <div class="item-image"></div>
+        <div class="item-image" id="item-image-${this.category}-${
+        this.idx
+      }"></div>
         <div class="item-info">
             <div class="item-name">
                 <span class="item-info-title">상품명</span>
@@ -44,7 +54,8 @@ class ListItem {
     </div>
     `
     );
-  };
+    this.setImages();
+  }
 }
 
 export { ListItem };
