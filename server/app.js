@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const mysql = require("mysql2/promise");
+const engines = require("consolidate");
+
 require("dotenv").config();
 
 const multer = require("multer");
@@ -40,6 +42,9 @@ const model = new Model(pool);
 passModelToSignin(model);
 passModelToUsers(model);
 passModelToItems(model);
+
+app.engine("html", engines.mustache);
+app.set("view engine", "html");
 
 app.use(logger("dev"));
 app.use(express.json());
