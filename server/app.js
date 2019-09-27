@@ -43,9 +43,6 @@ passModelToSignin(model);
 passModelToUsers(model);
 passModelToItems(model);
 
-app.engine("html", engines.mustache);
-app.set("view engine", "html");
-
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
