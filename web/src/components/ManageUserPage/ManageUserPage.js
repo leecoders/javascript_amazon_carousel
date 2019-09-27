@@ -59,6 +59,7 @@ class ManageUserPage {
 
   setUsersInfo = async () => {
     const results = await fetchAllUsers();
+    console.log(results);
     if (results.message == "success") {
       this.usersInfo = results.data;
       this.listLength = results.data.length;
