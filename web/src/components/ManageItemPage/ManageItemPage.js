@@ -85,7 +85,7 @@ class ManageItemPage {
 
   setOthersEvent = () => {
     this.categoryContainer.addEventListener("click", e => {
-      if (e.target.className != "item-category") return;
+      if (e.target.className != "item-category-name") return;
       this.selectCategory(e.target.id.split("category-")[1]);
     });
   };
