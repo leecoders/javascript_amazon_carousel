@@ -1,4 +1,5 @@
-const serverUrl = "http://106.10.34.142:3000/";
+// const serverUrl = "http://106.10.34.142:3000/";
+const serverUrl = "http://localhost:3000/";
 
 const fetchSignInResult = (id, password) => {
   return fetch(serverUrl + "signin/submit", {

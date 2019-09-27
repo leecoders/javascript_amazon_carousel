@@ -13,7 +13,8 @@ class ListItem {
 
   setImages = () => {
     const imageBox = $(`#item-image-${this.category}-${this.idx}`);
-    const imageUrl = `http://106.10.34.142:3000/public/item_images/${this.image}`;
+    // const imageUrl = `http://106.10.34.142:3000/public/item_images/${this.image}`;
+    const imageUrl = `http://localhost:3000/public/item_images/${this.image}`;
     imageBox.style.background = `url(${imageUrl}) no-repeat 50% 50%`;
     imageBox.style.backgroundSize = "10rem 10rem";
   };
